@@ -14,7 +14,7 @@ Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald
 }
 
 body {
-    background: var(--black-gradient);
+    background: var(--secondary-white);
     height: 100vh;
 }
 
@@ -38,8 +38,8 @@ body {
     /* -------------------------------- COLORS ------------------------------- */
     --primary-white: #ffffff;
     --secondary-white: #f0f0f0;
-    --primary-black: #000000;
-    --secondary-black: #222222;
+    /* --primary-black: #000000; */
+    /* --secondary-black: #222222; */
     --primary-green: #547c55;
     --secondary-green: #56776b;
     --primary-darkgreen: #464f41;
@@ -72,7 +72,6 @@ body {
     }
 
     @media screen and (min-width: 951px) {
-
         a,
         p {
             font-size: 14px;
