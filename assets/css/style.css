@@ -24,15 +24,9 @@ body {
     width: 85%;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
-    .page-margin {
-        width: 90%;
-    }
-}
-
 @media screen and (min-width: 951px) {
     .page-margin {
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -50,6 +44,15 @@ body {
     --text-shadow: 1px 1px 5px rgb(0, 0, 0, 80%);
     --box-shadow: 0px 3px 8px 0px rgb(0, 0, 0, 40%);
     --box-opacity-secondary-green: rgb(86, 119, 107, 60%);
+    --primary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
+            rgb(84, 124, 85),
+            rgb(84, 124, 85),
+            rgba(240, 240, 240, 0.40));
+    --secondary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
+            rgba(240, 240, 240, 0.40),
+            rgb(84, 124, 85),
+            rgba(240, 240, 240, 0.40));
+    --text-hover-link: rgba(255, 255, 255, 0.6);
 
     /* --------------------------------- FONTS -------------------------------- */
     --primary-font: "Roboto";
@@ -168,23 +171,20 @@ h5 {
     cursor: pointer;
     position: absolute;
     top: 18px;
+    left: 7.5%;
     transition: 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 951px) {
     .logo {
-        margin: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: none;
     }
 }
 
 #dropdownmenu {
     width: 30px;
-}
-
-@media screen and (min-width: 672px) and (max-width: 950px) {
-    #dropdownmenu {
-        width: 40px;
-    }
 }
 
 @media screen and (min-width: 951px) {
@@ -196,7 +196,7 @@ h5 {
 .header-inner {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 7.5%;
     height: 74px;
@@ -206,18 +206,26 @@ h5 {
 @media screen and (min-width: 951px) {
     .header-inner {
         flex-direction: row;
+        padding: 0;
     }
 }
 
 .gradient-border {
     height: 3px;
-    background: -webkit-linear-gradient(0deg,
-            #547c55,
-            #547c55,
-            #f0f0f0);
+    background: var(--primary-box-gradient-primary-green);
+}
+
+@media screen and (min-width: 951px) {
+    .gradient-border {
+        background: var(--secondary-box-gradient-primary-green);
+    }
 }
 
 /* ------------------------- DROPDOWN MENU ------------------------------- */
+.menu {
+    padding: 0 7.5%;
+}
+
 .top-menu {
     background-color: transparent;
     position: absolute;
@@ -234,7 +242,9 @@ h5 {
         position: relative;
         top: 0;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        opacity: 1;
+        transition: none;
     }
 }
 
@@ -254,6 +264,14 @@ h5 {
     .top-menu ul li {
         padding: 0 16px;
     }
+
+    .top-menu li:nth-child(5) {
+        margin-left: 65px;
+    }
+
+    .top-menu li:nth-child(4) {
+        margin-right: 65px;
+    }
 }
 
 .top-menu ul li a {
@@ -264,9 +282,9 @@ h5 {
     text-shadow: var(--text-shadow);
 }
 
-/* @media screen and (min-width: 951px) {
+@media screen and (min-width: 951px) {
     .top-menu li a:hover {
-        color: var(--grey-hover);
+        color: var(--text-hover-link);
         cursor: pointer;
     }
 }
@@ -285,8 +303,7 @@ h5 {
 }
 
 .change.top-menu {
-    transition: 0.6s ease-in-out;
-    /* Adjust the duration to your preference */
+    transition: 0.8s ease-in-out;
 }
 
 .change-header-height {
@@ -311,25 +328,12 @@ h5 {
     transition: 0.3s ease;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
-    .bar {
-        height: 5px;
-        margin-top: 5px;
-    }
-}
-
 #bar1 {
     transform: translateY(-4px);
 }
 
 .change #bar1 {
-    transform: translateY(6px) rotate(45deg);
-}
-
-@media screen and (min-width: 672px) and (max-width: 950px) {
-    .change #bar1 {
-        transform: translateY(10px) rotate(45deg) !important;
-    }
+    transform: translateY(6px) rotate(-45deg);
 }
 
 .change #bar2 {
@@ -341,13 +345,7 @@ h5 {
 }
 
 .change #bar3 {
-    transform: translateY(-6px) rotate(-45deg);
-}
-
-@media screen and (min-width: 672px) and (max-width: 950px) {
-    .change #bar3 {
-        transform: translateY(-10px) rotate(-45deg);
-    }
+    transform: translateY(-6px) rotate(45deg);
 }
 
 /* ======================================================================== */
