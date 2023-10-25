@@ -1,5 +1,5 @@
 /**
-Theme Name: Aska
+Theme Name: Aska Islandshesteklub
 Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald  
 **/
 
@@ -139,7 +139,7 @@ body {
 /* ======================================================================== */
 /* ================================ HEADER ================================ */
 .logo {
-    width: 40px;
+    width: 100px;
     z-index: 9999;
     vertical-align: middle;
     cursor: pointer;
@@ -155,5 +155,86 @@ body {
     .logo {
         width: 50px;
         margin: 0;
+    }
+}
+
+#dropdownmenu {
+    width: 30px;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+    #dropdownmenu {
+        width: 40px;
+    }
+}
+
+@media screen and (min-width: 951px) {
+    #dropdownmenu {
+        display: none;
+    }
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%;
+    height: 62px;
+    background-color: var(--primary-green);
+}
+
+@media screen and (min-width: 951px) {
+    .header-inner {
+        flex-direction: row;
+    }
+}
+
+.top-menu {
+    background-color: var(--primary-green);
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: none;
+}
+
+@media screen and (min-width: 951px) {
+    .top-menu {
+        position: relative;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.top-menu ul {
+    list-style-type: none;
+    color: var(--secondary-white);
+    font-size: 15px;
+    padding: 5px 20px 15px 20px;
+}
+
+@media screen and (min-width: 951px) {
+    .top-menu ul {
+        display: flex;
+        padding: 0;
+    }
+}
+
+.top-menu li {
+    padding: 8px 0;
+}
+
+@media screen and (min-width: 951px) {
+    .top-menu li {
+        padding: 12px 0px 4px 22px;
+    }
+}
+
+@media screen and (min-width: 951px) {
+    .top-menu li a:hover {
+        color: var(--grey-hover);
+        cursor: pointer;
     }
 }
