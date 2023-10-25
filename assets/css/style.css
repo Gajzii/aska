@@ -278,38 +278,100 @@ footer{
         "footer-address footer-address"
         "footer-mail footer-mail"
         "footer-cvr footer-cvr"
-        "footer-fb-icon footer-ig-icon";
+        "some-logos some-logos";
     text-align: center;
-    padding: 20px 0;
-    height: 130px;
+    padding: 25px 0;
+    height: 120px;
     width: 50%;
     margin: auto;
-
-
+    align-items: center;
 }
 
-.footer-address { grid-area: footer-address; }
+@media screen and (min-width: 672px) and (max-width: 950px) {
+.footer-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  grid-template-areas: 
+    "footer-address some-logos some-logos footer-mail"
+    "footer-address some-logos some-logos footer-cvr";
+    padding: 40px 0;
+    text-align: right;
+    width: 80%;
+    height: 30px;
+
+}}
+
+
+@media screen and (min-width: 951px) {
+.footer-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  grid-template-areas: 
+    "footer-address some-logos some-logos footer-mail"
+    "footer-address some-logos some-logos footer-cvr";
+    padding: 50px 0;
+    text-align: right;
+    width: 80%;
+    height: 30px;
+}
+}
+
+.footer-address { 
+    grid-area: footer-address; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+.footer-address { 
+    grid-area: footer-address; 
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+}
+
+
+@media screen and (min-width: 951px) {
+    .footer-address { 
+    grid-area: footer-address; 
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+}
+
 .footer-mail { grid-area: footer-mail; }
+
 .footer-cvr { grid-area: footer-cvr; }
 
-.footer-fb-icon {
-    grid-area: footer-fb-icon; 
-    
+.some-logos { 
+    grid-area: some-logos; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
 
 }
-
-.footer-ig-icon 
-{ grid-area: footer-ig-icon; 
-
-}
-
 
 .footer-credits{
     background-color: var(--primary-darkgreen);
-    padding: 8px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
-.some-icon{
-    width: 40px;
+.footer-credits p{
+    font-size: 10px;
 }
+
+.some-icon{
+    width: 35px;
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 951px) {
+.some-icon{
+    width: 45px;
+    margin-top: 0;
+}}
