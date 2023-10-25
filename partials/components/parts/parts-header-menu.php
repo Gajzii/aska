@@ -1,4 +1,5 @@
-<header class="header">
+<header>
+    <div class="header-background"></div>
     <div class="header-inner">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
             <img alt="ASKA Islandshesteklub logo" class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/logo.svg" />
@@ -19,4 +20,5 @@
             ?>
         </nav>
     </div>
+    <div class="gradient-border"></div>
 </header>
