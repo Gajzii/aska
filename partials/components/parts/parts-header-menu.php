@@ -1,4 +1,5 @@
 <header>
+    <div class="header-outer">
     <div class="header-background"></div>
     <div class="header-inner">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -21,4 +22,5 @@
         </nav>
     </div>
     <div class="gradient-border"></div>
+    </div>
 </header>
