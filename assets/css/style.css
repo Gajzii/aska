@@ -78,12 +78,13 @@ body {
         text-decoration: none;
     }
 
-    @media screen and (min-width: 951px) {
-        a,
-        p {
-            font-size: 14px;
-        }
+@media screen and (min-width: 951px) {
+
+    a,
+    p {
+        font-size: 14px;
     }
+}
 
     h1,
     h2,
@@ -94,43 +95,43 @@ body {
         text-transform: uppercase;
     }
 
+h1 {
+    font-size: 35px;
+}
+
+@media screen and (min-width: 951px) {
     h1 {
-        font-size: 35px;
+        font-size: 55px;
     }
+}
 
-    @media screen and (min-width: 951px) {
-        h1 {
-            font-size: 55px;
-        }
-    }
+h2 {
+    font-size: 24px;
+}
 
-    h2 {
-        font-size: 24px;
-    }
+h3 {
+    font-size: 18px;
+}
 
-    h3 {
-        font-size: 18px;
-    }
+h4 {
+    font-size: 14px;
+}
 
+@media screen and (min-width: 951px) {
     h4 {
+        font-size: 17px;
+    }
+}
+
+h5 {
+    font-size: 11px;
+}
+
+@media screen and (min-width: 951px) {
+    h5 {
         font-size: 14px;
     }
-
-    @media screen and (min-width: 951px) {
-        h4 {
-            font-size: 17px;
-        }
-    }
-
-    h5 {
-        font-size: 11px;
-    }
-
-    @media screen and (min-width: 951px) {
-        h5 {
-            font-size: 14px;
-        }
-    }
+}
 
     .btn-text {
         font-size: 15px;
@@ -144,22 +145,26 @@ body {
 
 /* ======================================================================== */
 /* ================================ HEADER ================================ */
-.logo {
-    width: 100px;
-    z-index: 9999;
-    vertical-align: middle;
-    cursor: pointer;
+.header-background {
+    position: absolute;
+    height: 74px;
+    background-color: var(--secondary-green);
+    opacity: 0.6;
+    backdrop-filter: blur(2px);
+    z-index: 0;
+    width: 100%;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
-    .logo {
-        width: 50px;
-    }
+.logo {
+    width: 135px;
+    z-index: 9999;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
 }
 
 @media screen and (min-width: 951px) {
     .logo {
-        width: 50px;
         margin: 0;
     }
 }
@@ -181,12 +186,12 @@ body {
 }
 
 .header-inner {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 2%;
-    height: 62px;
-    background-color: var(--primary-green);
+    padding: 0 7.5%;
+    height: 74px;
 }
 
 @media screen and (min-width: 951px) {
@@ -195,14 +200,23 @@ body {
     }
 }
 
+.gradient-border {
+    height: 3px;
+    background: -webkit-linear-gradient(0deg,
+            #547c55,
+            #547c55,
+            #f0f0f0);
+}
+
 .top-menu {
     background-color: var(--primary-green);
     position: absolute;
-    top: 75px;
+    top: 77px;
     left: 0;
     width: 100%;
     z-index: 999;
     display: none;
+    padding-top: 40px;
 }
 
 @media screen and (min-width: 951px) {
@@ -214,13 +228,6 @@ body {
     }
 }
 
-.top-menu ul {
-    list-style-type: none;
-    color: var(--secondary-white);
-    font-size: 15px;
-    padding: 5px 20px 15px 20px;
-}
-
 @media screen and (min-width: 951px) {
     .top-menu ul {
         display: flex;
@@ -228,17 +235,25 @@ body {
     }
 }
 
-.top-menu li {
-    padding: 8px 0;
+.top-menu ul li {
+    list-style-type: none;
+    padding: 16px 0;
 }
 
 @media screen and (min-width: 951px) {
-    .top-menu li {
-        padding: 12px 0px 4px 22px;
+    .top-menu ul li {
+        padding: 0 16px;
     }
 }
 
-@media screen and (min-width: 951px) {
+.top-menu ul li a {
+    color: var(--primary-white);
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* @media screen and (min-width: 951px) {
     .top-menu li a:hover {
         color: var(--grey-hover);
         cursor: pointer;
