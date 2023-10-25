@@ -1,0 +1,160 @@
+/**
+Theme Name: Anton Tzannis
+Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald  
+**/
+
+/* Mobile first 
+// Tablet mediaquery: @media screen and (min-width: 672px) and (max-width: 950px) 
+// Desktop mediaqury: @media screen and (min-width: 951px) */
+/* ======================================================================== */
+/* ================================ GENERAL =============================== */
+
+* {
+    margin: 0;
+}
+
+body {
+    background: var(--black-gradient);
+    height: 100vh;
+}
+
+.page-margin {
+    width: 85%;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+    .page-margin {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 951px) {
+    .page-margin {
+        width: 80%;
+    }
+}
+
+:root {
+    /* -------------------------------- COLORS ------------------------------- */
+    --primary-white: #ffffff;
+    --secondary-white: #f0f0f0;
+    --primary-black: #000000;
+    --secondary-black: #222222;
+    --primary-green: #547c55;
+    --secondary-green: #56776b;
+    --primary-darkgreen: #464f41;
+
+    /* -------------------------------- EFFECTS ------------------------------- */
+    --text-shadow: text-shadow: 0 0 5px var(--primary-black);
+    --box-shadow: 0px 3px 8px 0px rgb(0 0 0 / 40%);
+
+    /* --------------------------------- FONTS -------------------------------- */
+    --primary-font: "Roboto";
+
+    /* --------------------------- HEADINGS & TEXT ---------------------------- */
+    a,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    btn-text,
+    menutext {
+        font-family: var(--primary-font);
+        color: var(--primary-white);
+    }
+
+    a,
+    p {
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 951px) {
+
+        a,
+        p {
+            font-size: 14px;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h5,
+    btn-text,
+    menu-text {
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    @media screen and (min-width: 951px) {
+        h1 {
+            font-size: 55px;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: 951px) {
+        h4 {
+            font-size: 17px;
+        }
+    }
+
+    h5 {
+        font-size: 11px;
+    }
+
+    @media screen and (min-width: 951px) {
+        h5 {
+            font-size: 14px;
+        }
+    }
+
+    btn-text {
+        font-size: 15px;
+    }
+
+    menu-text {
+        font-size: 16px;
+    }
+}
+
+/* -------------------------------- BUTTONS ------------------------------- */
+
+/* ======================================================================== */
+/* ================================ HEADER ================================ */
+.logo {
+    width: 40px;
+    z-index: 9999;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+    .logo {
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 951px) {
+    .logo {
+        width: 50px;
+        margin: 0;
+    }
+}
