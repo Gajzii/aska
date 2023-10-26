@@ -22,6 +22,7 @@ body {
 
 .page-margin {
     width: 85%;
+    margin: 0 auto;
 }
 
 @media screen and (min-width: 951px) {
@@ -101,7 +102,8 @@ h5,
 }
 
 h1 {
-    font-size: 35px;
+    font-size: 31px;
+    text-shadow: var(--text-shadow);
 }
 
 @media screen and (min-width: 951px) {
@@ -473,10 +475,25 @@ footer {
 /* ================================ HERO ================================== */
 .hero {
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     background-image: url(../media/hero-img.jpg);
-    background-size: 220%;
+    background-size: 1000px;
     background-repeat: no-repeat;
-    background-position-x: 43%;
-    background-position-y: 70%;
+    background-position-x: 45%;
+    background-position-y: 80%;
+}
+
+.hero-content {
+    position: absolute;
+    margin-top: 65vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 85%;
+}
+
+.hero-text {
+    width: 320px;
+    text-shadow: var(--text-shadow);
+    font-size: 14px;
 }
