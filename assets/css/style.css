@@ -68,8 +68,7 @@ h3,
 h4,
 h5,
 h6,
-.btn-text,
-.menutext {
+.btn-text {
     font-family: var(--primary-font);
     color: var(--primary-white);
     font-weight: 300;
@@ -96,8 +95,7 @@ h1,
 h2,
 h3,
 h5,
-.btn-text,
-.menu-text {
+.btn-text {
     text-transform: uppercase;
 }
 
@@ -144,10 +142,6 @@ h5 {
     font-size: 15px;
 }
 
-.menu-text {
-    font-size: 16px;
-}
-
 /* -------------------------------- BUTTONS ------------------------------- */
 
 /* ======================================================================== */
@@ -165,6 +159,7 @@ h5 {
     position: absolute;
     width: 100%;
     backdrop-filter: blur(10px);
+    z-index: 99999;
 }
 
 .logo {
@@ -236,7 +231,8 @@ h5 {
     width: 100%;
     z-index: 999;
     opacity: 0;
-    transition: opacity 0.1s ease-in-out;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
 }
 
 @media screen and (min-width: 951px) {
@@ -247,6 +243,7 @@ h5 {
         justify-content: space-between;
         opacity: 1;
         transition: none;
+        visibility: visible;
     }
 }
 
@@ -284,6 +281,12 @@ h5 {
     text-shadow: var(--text-shadow);
 }
 
+@media screen and (min-width: 951px) and (max-width: 1102px) {
+    .top-menu ul li a {
+        font-size: 12px;
+    }
+}
+
 @media screen and (min-width: 951px) {
     .top-menu li a:hover {
         color: var(--text-hover-link);
@@ -302,6 +305,7 @@ h5 {
 
 .change {
     opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .change.top-menu {
