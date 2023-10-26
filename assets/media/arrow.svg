@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 128" width="115" height="155">
+	<title>Vector (1)</title>
+	<defs>
+		<image  width="95" height="128" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAACACAMAAABa+kU9AAAAAXNSR0IB2cksfwAAADlQTFRF////////////////AAAA////////////////////////////////////////////////////////tYqFgAAAABN0Uk5TgP/PEADfIHBgMO9ff5+gkL9vj/aS12EAAAKOSURBVHiczdrbbuowEEDRAOYSApT2/z+2oqWUEHvP1RI807Wlo6PMOHgYVs3PelPCn6H0DQyFAttdgl/2HQM3vxz6BX78joFfv1/g7pfx2AwcxwS/V+DhU2A1Jfhl3HYIPPllB4FTgt8jMPM7BOZ+fuDFTw+8+hg4J/hlt84MLP2ygYB54lT81EDNx4DxcVr1S7lkBRp+WqDlZwWafvlICbR92lv0Ewf8lAD5FNBOHPQTAuxjQPU4FfxwQPJpOdUERJ9WO0VA9mMBhY8BaeJofFzthIDKxwBPHJ3vDyh9XE7pcar1cW+BgNp3BvS+L2DwXQGLj4HGxDH5joDNx+W0OnGMPq52tYDV58DycWr2jQG7j6vdIuDxLQGXbwj4fAzMJo7TVwe8PgaeJo7bVwb8PgYej9OArwpEfE0g5CsCMV8OBH0M3CZO1JcCYR8Dqyns4zg4jlFf4KP/Psjf/gPFfJGP+TIf8hV8xEd+HX6+Mf83ANw+8tfwfEH+8v89p6/lnT7yM9Ll63mXb+A9voXP3s/3r982+3hCOiy+bvXxhLfkzec76wHyrc6njgP8G70f6Px+w/eGSe3jG7L4+yXvC7iE93vX+Pu9CfgL/qXKn9q6wKt84sX3+zL/GeAV/inCy36MF33iF8PK7hNfmSZWH/jasLL6xCt/wCP/K86Tf27z+h9Q234K3/Zz+Ja/uebwDR9vKMR/30+8AFHzacXEYaXzaQ8RponGT+Vt93MchxHL/SLPWcpwP8p1FNTf7/KdZGd/RSumZlgJPi1pummCPt1w9PK6+42BC5QPH1bMjPuZsAOGLrAOffm7Dytmxv1e2EMy7icDbxtWdZ/48AX0gXjrsKr5h23zY58my883fvybVcskBZoAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Lag 1" href="#img1" x="0" y="0"/>
+</svg>
