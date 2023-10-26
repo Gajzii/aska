@@ -31,5 +31,3 @@
         <?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?>
     </div>
 </div>
-
-<br><br>
