@@ -167,13 +167,14 @@ h5,
 }
 
 h1 {
-    font-size: 31px;
+    font-size: 26px;
     text-shadow: var(--text-shadow);
+    font-weight: 400;
 }
 
 @media screen and (min-width: 951px) {
     h1 {
-        font-size: 55px;
+        font-size: 45px;
     }
 }
 
@@ -558,6 +559,13 @@ footer {
     background-position-y: 80%;
 }
 
+@media screen and (min-width: 951px) {
+    .hero {
+        background-size: 100%;
+        background-position-y: 50%;
+    }
+}
+
 .hero-content {
     position: absolute;
     margin-top: 580px;
@@ -567,13 +575,27 @@ footer {
     width: 85%;
 }
 
+@media screen and (min-width: 951px) {
+    .hero-content {
+        margin-top: 60vh;
+    }
+}
+
 .hero-text {
     width: 280px;
     text-shadow: var(--text-shadow);
     font-size: 15px;
     line-height: 20px;
+    margin-bottom: 10px;
 }
 
+@media screen and (min-width: 951px) {
+    .hero-text {
+        width: 440px;
+    }
+}
+
+/* ---------------------------- HERO CTA --------------------------------- */
 .hero-cta {
     background-color: blue;
     display: flex;
