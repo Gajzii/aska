@@ -100,8 +100,9 @@ h5,
 }
 
 h1 {
-    font-size: 31px;
+    font-size: 26px;
     text-shadow: var(--text-shadow);
+    font-weight: 400;
 }
 
 @media screen and (min-width: 951px) {
@@ -119,7 +120,7 @@ h3 {
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 @media screen and (min-width: 951px) {
@@ -489,7 +490,7 @@ footer {
 
 .hero-content {
     position: absolute;
-    margin-top: 65vh;
+    margin-top: 580px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -497,7 +498,8 @@ footer {
 }
 
 .hero-text {
-    width: 320px;
+    width: 280px;
     text-shadow: var(--text-shadow);
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 20px;
 }
