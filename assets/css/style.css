@@ -187,7 +187,7 @@ h3 {
 }
 
 h4 {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media screen and (min-width: 951px) {
@@ -235,6 +235,7 @@ h5 {
   position: absolute;
   width: 100%;
   backdrop-filter: blur(10px);
+  z-index: 99999;
 }
 
 .logo {
@@ -298,16 +299,17 @@ h5 {
   padding: 0 7.5%;
 }
 
-/* .top-menu {
-    background-color: transparent;
-    position: absolute;
-    top: 15px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.1s ease-in-out;
-} */
+.top-menu {
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+}
 
 @media screen and (min-width: 951px) {
   .top-menu {
@@ -317,6 +319,7 @@ h5 {
     justify-content: space-between;
     opacity: 1;
     transition: none;
+    visibility: visible;
   }
 }
 
@@ -354,6 +357,12 @@ h5 {
   text-shadow: var(--text-shadow);
 }
 
+@media screen and (min-width: 951px) and (max-width: 1102px) {
+  .top-menu ul li a {
+    font-size: 12px;
+  }
+}
+
 @media screen and (min-width: 951px) {
   .top-menu li a:hover {
     color: var(--text-hover-link);
@@ -383,7 +392,7 @@ h5 {
 }
 
 .change {
-  /* opacity: 1 !important; */
+  opacity: 1 !important;
   visibility: visible !important;
 }
 
@@ -564,7 +573,7 @@ footer {
 
 .hero-content {
   position: absolute;
-  margin-top: 65vh;
+  margin-top: 580px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -572,9 +581,10 @@ footer {
 }
 
 .hero-text {
-  width: 320px;
+  width: 280px;
   text-shadow: var(--text-shadow);
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .hero-cta {
