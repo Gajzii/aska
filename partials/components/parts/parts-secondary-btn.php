@@ -1,5 +1,5 @@
-<div class="primary-btn-border">
-    <button class="primary-btn btn-text-primary">
+<div class="secondary-btn-border">
+    <button class="secondary-btn btn-text-secondary">
         Læs mere
 
         <img class="arrow-icon" alt="Pil ikon til højre"
