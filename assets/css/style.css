@@ -3,7 +3,7 @@ Theme Name: Aska Islandshesteklub
 Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald  
 **/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* Mobile first 
 // Tablet mediaquery: @media screen and (min-width: 672px) and (max-width: 950px) 
@@ -31,6 +31,69 @@ body {
     }
 }
 
+/* primary btn*/
+.primary-btn {
+    background-color: var(--primary-darkgreen);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+    width: 130px;
+    justify-content: space-between;
+    border: 1px solid var(--primary-white);
+}
+
+.primary-btn-border {
+    background-color: var(--primary-darkgreen);
+    border-radius: 30px;
+    height: 40px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-icon {
+    width: 13px;
+}
+
+.btn-text-primary {
+    padding-left: 15px;
+}
+
+/* ---------- */
+/* seconday btn */
+.secondary-btn {
+    background-color: var(--primary-darkgreen);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+    width: 110px;
+    justify-content: space-between;
+    border: 1px solid var(--primary-white);
+}
+
+.secondary-btn-border {
+    background-color: var(--primary-darkgreen);
+    border-radius: 30px;
+    height: 40px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-text-secondary {
+    padding-left: 10px;
+}
+
+/* ---------- */
+
 :root {
     /* -------------------------------- COLORS ------------------------------- */
     --primary-white: rgb(255, 255, 255);
@@ -48,11 +111,11 @@ body {
     --primary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
             rgb(84, 124, 85),
             rgb(84, 124, 85),
-            rgba(240, 240, 240, 0.40));
+            rgba(240, 240, 240, 0.4));
     --secondary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
-            rgba(240, 240, 240, 0.40),
+            rgba(240, 240, 240, 0.4),
             rgb(84, 124, 85),
-            rgba(240, 240, 240, 0.40));
+            rgba(240, 240, 240, 0.4));
     --text-hover-link: rgba(255, 255, 255, 0.6);
 
     /* --------------------------------- FONTS -------------------------------- */
@@ -68,7 +131,9 @@ h3,
 h4,
 h5,
 h6,
-.btn-text {
+.btn-text-primary,
+.btn-text-secondary,
+.menutext {
     font-family: var(--primary-font);
     color: var(--primary-white);
     font-weight: 300;
@@ -95,7 +160,9 @@ h1,
 h2,
 h3,
 h5,
-.btn-text {
+.btn-text-primary,
+.btn-text-secondary,
+.menu-text {
     text-transform: uppercase;
 }
 
@@ -119,7 +186,7 @@ h3 {
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 @media screen and (min-width: 951px) {
@@ -138,8 +205,16 @@ h5 {
     }
 }
 
-.btn-text {
-    font-size: 15px;
+.btn-text-primary {
+    font-size: 16px;
+}
+
+.btn-text-secondary {
+    font-size: 14px;
+}
+
+.menu-text {
+    font-size: 16px;
 }
 
 /* -------------------------------- BUTTONS ------------------------------- */
@@ -391,10 +466,8 @@ footer {
         text-align: right;
         width: 80%;
         height: 30px;
-
     }
 }
-
 
 @media screen and (min-width: 951px) {
     .footer-grid {
@@ -426,7 +499,6 @@ footer {
     }
 }
 
-
 @media screen and (min-width: 951px) {
     .footer-address {
         grid-area: footer-address;
@@ -450,7 +522,6 @@ footer {
     flex-direction: row;
     justify-content: center;
     gap: 15px;
-
 }
 
 .footer-credits {
@@ -489,7 +560,7 @@ footer {
 
 .hero-content {
     position: absolute;
-    margin-top: 65vh;
+    margin-top: 580px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -497,7 +568,30 @@ footer {
 }
 
 .hero-text {
-    width: 320px;
+    width: 280px;
     text-shadow: var(--text-shadow);
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.hero-cta {
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+}
+
+.cta-card {
+    background-color: var(--primary-black);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cta-icon {
+    background-color: red;
+    clip-path: circle(50% at 50% 100%);
+    width: 100%;
+    height: 100%;
 }
