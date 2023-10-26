@@ -228,7 +228,7 @@ h5 {
     padding: 0 7.5%;
 }
 
-.top-menu {
+/* .top-menu {
     background-color: transparent;
     position: absolute;
     top: 15px;
@@ -237,7 +237,7 @@ h5 {
     z-index: 999;
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
-}
+} */
 
 @media screen and (min-width: 951px) {
     .top-menu {
@@ -292,6 +292,18 @@ h5 {
 }
 
 /* -------------------- BURGER MENU SYMBOL + CHANGE ---------------------- */
+.top-menu {
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    /* opacity: 0; */
+    visibility: hidden;
+    transition: 1s ease-in-out;
+}
+
 #dropdownmenu {
     width: 30px;
     position: absolute;
@@ -301,7 +313,8 @@ h5 {
 }
 
 .change {
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
+    visibility: visible !important;
 }
 
 .change.top-menu {
