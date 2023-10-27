@@ -1,58 +1,60 @@
 <div class="membership-benefits-section">
-    <h2>medlemsfordele</h2>
-    <p>Som medlem af ASKA får du adgang til en række eksklusive fordele, som du kan drage nytte af. Du kan finde flere
-        oplysninger om vores forskellige medlemsfordele nedenfor.</p>
+    <div class="page-margin">
+        <h2>Medlemsfordele</h2>
+        <p>Som medlem af ASKA får du adgang til en række eksklusive fordele, som du kan drage nytte af. Du kan finde
+            flere
+            oplysninger om vores forskellige medlemsfordele nedenfor.</p>
+        <div class="membership-benefits-cards">
 
-    <div class="membership-benefits-cards">
+            <?php if ( have_rows('membership_benefits') ) : ?>
 
-        <div class="membership-benefits-card">
-            <div class="benefits-icon-border">
-                <div class="benefits-icon-bg">
-                    <h3>50%</h3>
-                </div>
-            </div>
+            <?php while ( have_rows('membership_benefits') ) : the_row(); ?>
+            <?php
+                $membership_benefits_discount = get_sub_field('membership_benefits_discount');
+                $membership_benefits_heading = get_sub_field('membership_benefits_heading');
+                $read_more_btn = get_sub_field('read_more_btn');
+                $membership_benefits_img = get_sub_field('membership_benefits_img');
+            ?>
 
-            <div class="benefits-card-bg">
-                <h4>Ridekort til Østanlægget</h4>
-
-                <div class="benefits-card-img-overlay">
-                    <div class="benefits-btn">
-                        <?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?>
+            <div class="membership-benefits-card">
+                <div class="benefits-icon-border">
+                    <div class="benefits-icon-bg">
+                        <h3><?= $membership_benefits_discount?>%</h3>
                     </div>
-                    <img class="benefits-card-img" alt="Ridekort til Østanlægget"
-                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/ridekort-til-osteranlaegget.jpg" />
                 </div>
-            </div>
-        </div>
-
-
-
-        <div class="membership-benefits-card">
-            <div class="benefits-icon-border">
-                <div class="benefits-icon-bg">
-                    <h3>50%</h3>
-                </div>
-            </div>
-
-            <div class="benefits-card-bg">
-                <h4>Ridekort til Østanlægget</h4>
-
-                <div class="benefits-card-img-overlay">
+                <div class="benefits-card-bg">
+                    <h4><?= $membership_benefits_heading?></h4>
                     <div class="benefits-btn">
-                        <?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?>
+                        <a class="primary-btn-border" href="<?= $read_more_btn['url']; ?>">
+                            <button class="primary-btn btn-text-primary">
+                                <?= $read_more_btn['title'];?>
+                                <img class="arrow-icon" alt="Pil ikon til højre"
+                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
+                            </button>
+                        </a>
                     </div>
-                    <img class="benefits-card-img" alt="Ridekort til Østanlægget"
-                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/ridekort-til-osteranlaegget.jpg" />
+                    <div class="benefits-card-img-overlay">
+                        <img class="benefits-card-img" src="<?php echo $membership_benefits_img['url']; ?>" />
+                    </div>
                 </div>
             </div>
+            <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
+    <div class="prev-next-btns">
+        <div class="arrow-btn-border">
+            <button class="arow-btn prev-btn">
+                <img class="arrow-icon-left" alt="Pil ikon til venstre"
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-green.svg" />
+            </button>
+        </div>
 
-
-
-
-
-    <!-- pile laves med parts -->
+        <div class="arrow-btn-border">
+            <button class="arow-btn next-btn">
+                <img class="arrow-icon-right" alt="Pil ikon til venstre"
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-green.svg" />
+            </button>
+        </div>
+    </div>
 </div>
-
-<br><br><br>
