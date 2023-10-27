@@ -38,16 +38,23 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <?php endwhile; ?>
             <?php endif; ?>
         </div>
     </div>
     <div class="prev-next-btns">
-        <?php get_template_part( 'partials/components/parts/parts','arrow-btn-left' ); ?>
-        <?php get_template_part( 'partials/components/parts/parts','arrow-btn-right' ); ?>
+        <div class="arrow-btn-border">
+            <button class="arow-btn prev-btn">
+                <img class="arrow-icon-left" alt="Pil ikon til venstre"
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-green.svg" />
+            </button>
+        </div>
+
+        <div class="arrow-btn-border">
+            <button class="arow-btn next-btn">
+                <img class="arrow-icon-right" alt="Pil ikon til venstre"
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-green.svg" />
+            </button>
+        </div>
     </div>
 </div>

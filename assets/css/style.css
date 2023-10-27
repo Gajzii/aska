@@ -924,7 +924,6 @@ footer {
 
 /* ======================================================================== */
 /* ================================ MEMBERSHIP BENEFITS =================================== */
-
 .membership-benefits-section {
   background-color: var(--primary-darkgreen);
   text-align: center;
@@ -1027,3 +1026,5 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+/*Slide test*/
