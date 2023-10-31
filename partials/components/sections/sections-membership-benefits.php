@@ -94,39 +94,3 @@
         </div>
     </div>
 </div>
-
-<!-- test -->
-<!-- 
-<button class="myBtn_multi">Open Modal</button>
-<button class="myBtn_multi">Open Modal2</button>
-<button class="myBtn_multi">Open Modal2</button>
-
-<div class="modal modal_multi">
-
-    <div class="modal-content">
-        <span class="close_multi">
-            <img class="close-icon" alt="Luk modal ikon"
-                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
-        </span>
-        <p>Some text in the Modal..</p>
-    </div>
-
-</div>
-
-<div class="modal modal_multi">
-
-    <div class="modal-content">
-        <span class="close close_multi">×</span>
-        <p>Some text in the Modal..2</p>
-    </div>
-
-</div>
-
-<div class="modal modal_multi">
-
-    <div class="modal-content">
-        <span class="close close_multi">×</span>
-        <p>Some text in the Modal..2</p>
-    </div>
-
-</div> -->
