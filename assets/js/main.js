@@ -8,7 +8,6 @@ function onClickMenu() {
 }
 
 // ------------------ MEMBERSHIP BENEFITS SLIDER ------------------
-// script.js
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".membership-benefits-cards");
   const cards = document.querySelectorAll(".membership-benefits-card");
@@ -86,3 +85,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateSliderPosition();
 });
+
+/* MODAL */
+/* var modal = document.getElementById("benefitsModal");
+
+var btn = document.getElementById("modalOpenBtn");
+
+var span = document.getElementsByClassName("modal-close-btn")[0];
+
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}; */
+
+// test
+// Get the modal
+var modalparent = document.getElementsByClassName("modal_multi");
+var modal_btn_multi = document.getElementsByClassName("readMore_multi");
+var span_close_multi = document.getElementsByClassName("close_multi");
+
+function setDataIndex() {
+  for (var i = 0; i < modal_btn_multi.length; i++) {
+    modal_btn_multi[i].setAttribute("data-index", i);
+    modalparent[i].setAttribute("data-index", i);
+    span_close_multi[i].setAttribute("data-index", i);
+  }
+}
+
+for (var i = 0; i < modal_btn_multi.length; i++) {
+  modal_btn_multi[i].onclick = function () {
+    var ElementIndex = this.getAttribute("data-index");
+    modalparent[ElementIndex].style.display = "block";
+    // Disable scrolling when the modal is open
+    document.body.style.overflow = "hidden";
+  };
+
+  span_close_multi[i].onclick = function () {
+    var ElementIndex = this.getAttribute("data-index");
+    modalparent[ElementIndex].style.display = "none";
+    // Restore scrolling when the modal is closed
+    document.body.style.overflow = "auto";
+  };
+}
+
+window.onload = function () {
+  setDataIndex();
+};
+
+window.onclick = function (event) {
+  if (event.target === modalparent[event.target.getAttribute("data-index")]) {
+    modalparent[event.target.getAttribute("data-index")].style.display = "none";
+    // Restore scrolling when clicking outside the modal
+    document.body.style.overflow = "auto";
+  }
+};

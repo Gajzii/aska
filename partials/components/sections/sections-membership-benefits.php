@@ -14,6 +14,8 @@
                 $membership_benefits_heading = get_sub_field('membership_benefits_heading');
                 $read_more_btn = get_sub_field('read_more_btn');
                 $membership_benefits_img = get_sub_field('membership_benefits_img');
+                $membership_benefits_description = get_sub_field('membership_benefits_description');
+
             ?>
 
             <div class="membership-benefits-card">
@@ -25,19 +27,53 @@
                 <div class="benefits-card-bg">
                     <h4><?= $membership_benefits_heading?></h4>
                     <div class="benefits-btn">
-                        <a class="primary-btn-border" href="<?= $read_more_btn['url']; ?>">
-                            <button class="primary-btn btn-text-primary">
-                                <?= $read_more_btn['title'];?>
+                        <div class="secondary-btn-border">
+                            <button class="readMore_multi secondary-btn btn-text-secondary">
+                                Læs mere
                                 <img class="arrow-icon" alt="Pil ikon til højre"
                                     src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
                             </button>
-                        </a>
+                        </div>
                     </div>
                     <div class="benefits-card-img-overlay">
                         <img class="benefits-card-img" src="<?php echo $membership_benefits_img['url']; ?>" />
                     </div>
                 </div>
             </div>
+
+
+            <!-- modal -->
+            <div class="modal modal_multi">
+
+                <div class="modal-flex">
+
+                    <div class="benefits-icon-border modal-discount">
+                        <div class="benefits-icon-bg">
+                            <h3><?= $membership_benefits_discount?>%</h3>
+                        </div>
+                    </div>
+
+                    <div class="modal-content">
+                        <div class="modal-padding">
+                            <span class="close_multi">
+                                <img class="close-icon" alt="Luk modal ikon"
+                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
+                            </span>
+                            <div class="modal-text">
+                                <h4><?= $membership_benefits_heading?></h4>
+                                <p><?= $membership_benefits_description?></p>
+                            </div>
+                        </div>
+                        <div class="modal-img-overlay">
+                            <img class="modal-img" src="<?php echo $membership_benefits_img['url']; ?>" />
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- -- -->
+
             <?php endwhile; ?>
             <?php endif; ?>
         </div>
@@ -58,3 +94,39 @@
         </div>
     </div>
 </div>
+
+<!-- test -->
+<!-- 
+<button class="myBtn_multi">Open Modal</button>
+<button class="myBtn_multi">Open Modal2</button>
+<button class="myBtn_multi">Open Modal2</button>
+
+<div class="modal modal_multi">
+
+    <div class="modal-content">
+        <span class="close_multi">
+            <img class="close-icon" alt="Luk modal ikon"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
+        </span>
+        <p>Some text in the Modal..</p>
+    </div>
+
+</div>
+
+<div class="modal modal_multi">
+
+    <div class="modal-content">
+        <span class="close close_multi">×</span>
+        <p>Some text in the Modal..2</p>
+    </div>
+
+</div>
+
+<div class="modal modal_multi">
+
+    <div class="modal-content">
+        <span class="close close_multi">×</span>
+        <p>Some text in the Modal..2</p>
+    </div>
+
+</div> -->

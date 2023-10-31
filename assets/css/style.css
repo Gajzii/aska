@@ -1075,10 +1075,13 @@ footer {
   padding-top: 30px;
   align-items: center;
   position: relative;
+  box-shadow: 0px 4px 3px 0px rgb(0, 0, 0, 25%);
 }
 
 .benefits-card-bg h4 {
   height: 20px;
+  text-transform: uppercase;
+  width: 90%;
 }
 
 .benefits-card-img {
@@ -1103,15 +1106,15 @@ footer {
 .benefits-card-img-overlay::after {
   display: block;
   position: relative;
-  background-image: linear-gradient(0deg, #56776b00 0, #56776b 70%, #56776b 100%);
-  height: 110px;
+  background-image: linear-gradient(0deg, #56776b00 0, #56776b 80%, #56776b 100%);
+  height: 120px;
   width: 100%;
   content: "";
   border-radius: 0px 0px 0px 30px;
 }
 
 .benefits-btn {
-  transform: translate(0%, 60%);
+  transform: translate(0%, 80%);
   z-index: 2;
 }
 
@@ -1121,4 +1124,98 @@ footer {
   justify-content: space-evenly;
 }
 
-/*Slide test*/
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 8;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: var(--primary-black);
+  background-color: #000000ab;
+  backdrop-filter: grayscale(1) blur(2px);
+}
+
+.modal-content {
+  background-color: var(--secondary-green);
+  margin: auto;
+  width: 85%;
+  height: 405px;
+  border-radius: 30px 0 30px 0;
+  box-shadow: 0px 4px 3px 0px rgb(0, 0, 0, 25%);
+  position: relative;
+}
+
+.modal-discount {
+  transform: scale(1.7) translateY(10px);
+}
+
+.modal-discount h3 {
+  transform: translateY(-5px);
+}
+
+.modal-padding {
+  padding: 20px 20px 0 20px;
+}
+
+.modal-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-text {
+  width: 90%;
+  margin: auto;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.modal-text h4 {
+  text-transform: uppercase;
+  height: 50px;
+  width: 90%;
+}
+
+.modal-text p {
+  overflow-y: scroll;
+  height: 160px;
+}
+
+.close-icon {
+  float: right;
+  width: 22px;
+  cursor: pointer;
+}
+
+.modal-img-overlay {
+  max-width: 100%;
+  width: 100%;
+}
+
+.modal-img-overlay::after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(0deg, #56776b00 0, #56776b 90%, #56776b 100%);
+  height: 150px;
+  width: 100%;
+  content: "";
+  border-radius: 0 0 30px 0;
+}
+
+.modal-img {
+  max-width: 100%;
+  width: 100%;
+  height: 145px;
+  border-radius: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 80%;
+  position: absolute;
+  object-fit: cover;
+  bottom: 0;
+}
