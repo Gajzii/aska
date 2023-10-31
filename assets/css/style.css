@@ -193,6 +193,7 @@ svg path {
   fill: red !important;
   color: red !important;
 }
+
 :root {
   /* -------------------------------- COLORS ------------------------------- */
   --primary-white: rgb(255, 255, 255);
@@ -207,18 +208,14 @@ svg path {
   --text-shadow: 1px 1px 5px rgb(0, 0, 0, 80%);
   --box-shadow: 0px 3px 8px 0px rgb(0, 0, 0, 40%);
   --box-opacity-secondary-green: rgb(86, 119, 107, 60%);
-  --primary-box-gradient-primary-green: -webkit-linear-gradient(
-    0deg,
-    rgb(84, 124, 85),
-    rgb(84, 124, 85),
-    rgba(240, 240, 240, 0.4)
-  );
-  --secondary-box-gradient-primary-green: -webkit-linear-gradient(
-    0deg,
-    rgba(240, 240, 240, 0.4),
-    rgb(84, 124, 85),
-    rgba(240, 240, 240, 0.4)
-  );
+  --primary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
+      rgb(84, 124, 85),
+      rgb(84, 124, 85),
+      rgba(240, 240, 240, 0.4));
+  --secondary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
+      rgba(240, 240, 240, 0.4),
+      rgb(84, 124, 85),
+      rgba(240, 240, 240, 0.4));
   --text-hover-link: rgba(255, 255, 255, 0.6);
 
   /* --------------------------------- FONTS -------------------------------- */
@@ -252,6 +249,7 @@ a {
 }
 
 @media screen and (min-width: 951px) {
+
   a,
   p {
     font-size: 14px;
@@ -1122,3 +1120,42 @@ footer {
 }
 
 /*Slide test*/
+
+/* ======================================================================== */
+/* ============================== INSTAGRAM FEED ========================== */
+.instagram-header {
+  color: var(--primary-darkgreen);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.instagram {
+  margin: 40px auto;
+}
+
+.instagram-gallery__actions {
+  display: none;
+}
+
+.secondary-gradient-border {
+  height: 3px;
+  background: var(--secondary-box-gradient-primary-green);
+}
+
+#instagram-gallery-modal-0 .instagram-gallery-modal .instagram-gallery-modal__body .instagram-gallery-modal__media-sidebar .instagram-gallery-modal__media_description {
+  color: var(--secondary-black);
+}
+
+@media screen and (min-width: 950px) {
+  .instagram-gallery-list[data-feed_layout=gallery] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .instagram-gallery-item {
+    width: 100%;
+    display: block !important;
+  }
+
+}
