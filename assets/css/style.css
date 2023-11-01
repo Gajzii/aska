@@ -648,7 +648,8 @@ footer {
 
 /* ======================================================================== */
 /* ================================ HERO ================================== */
-.hero {
+.hero,
+.secondary-hero {
   width: 100%;
   height: 1000px;
   background-image: url(../media/hero-img.jpg);
@@ -659,10 +660,19 @@ footer {
 }
 
 @media (min-width: 951px) {
-  .hero {
+
+  .hero,
+  .secondary-hero {
     background-size: 100%;
     background-position-y: 50%;
   }
+}
+
+.secondary-hero {
+  height: 300px;
+  background-position-y: 33.5%;
+  background-image: url(../media/calendar-img.jpg);
+  position: relative;
 }
 
 .hero-content {
@@ -677,6 +687,19 @@ footer {
 @media (min-width: 951px) {
   .hero-content {
     margin-top: 60vh;
+  }
+}
+
+.secondary-hero-content {
+  position: absolute;
+  margin-top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 951px) {
+  .secondary-hero-content {
+    margin-top: 165px;
   }
 }
 
@@ -1416,4 +1439,5 @@ footer {
 }
 
 /* ======================================================================== */
-/* ======================================================================== */
+/* ================================ CALENDAR ============================== */
+.calendar-select-section {}
