@@ -1,9 +1,11 @@
 <div class="membership-benefits-section">
     <div class="page-margin">
-        <h2>Medlemsfordele</h2>
-        <p>Som medlem af ASKA får du adgang til en række eksklusive fordele, som du kan drage nytte af. Du kan finde
-            flere
-            oplysninger om vores forskellige medlemsfordele nedenfor.</p>
+        <div class="membership-benefits-text">
+            <h2>Medlemsfordele</h2>
+            <p>Som medlem af ASKA får du adgang til en række eksklusive fordele, som du kan drage nytte af. Du kan finde
+                flere
+                oplysninger om vores forskellige medlemsfordele nedenfor.</p>
+        </div>
         <div class="membership-benefits-cards">
 
             <?php if ( have_rows('membership_benefits') ) : ?>
@@ -39,10 +41,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
                 <?php endwhile; ?>
                 <?php endif; ?>
             </div>
