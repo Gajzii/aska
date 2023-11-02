@@ -125,10 +125,8 @@ body {
 @media screen and (min-width: 951px) {
   .secondary-btn:hover {
     background-color: var(--primary-darkgreen-hover);
-    /* border: 1px solid var(); */
     transition: all 1s ease;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 0.3);
-    /* filter: drop-shadow(-1px 0px 1px rgb(0 0 0 / 0.3)); */
   }
 }
 
@@ -1104,14 +1102,12 @@ footer {
 
 .membership-benefits-section {
   background-color: var(--primary-darkgreen);
-  /* text-align: center; */
   padding: 40px 0 20px 0;
 }
 
 .membership-benefits-cards {
   display: flex;
   overflow: hidden;
-  /* gap: 20px; */
   width: 319px;
   margin: auto;
 }
