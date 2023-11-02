@@ -54,6 +54,13 @@ body {
   cursor: pointer;
 }
 
+@media screen and (min-width: 951px) {
+  .primary-btn:hover {
+    background-color: var(--primary-darkgreen-hover);
+    transition: all 1s ease;
+  }
+}
+
 .primary-btn-border {
   background-color: var(--primary-darkgreen);
   border-radius: 30px;
@@ -67,6 +74,21 @@ body {
 
 .arrow-icon {
   width: 13px;
+  filter: var(--svg-primary-white);
+}
+
+@media screen and (min-width: 951px) {
+  .arrow-icon {
+    margin-right: 3px;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .primary-btn:hover .arrow-icon {
+    transform: translate(30%, 0);
+    transition: all 1s ease;
+    filter: var(--svg-primary-green) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
+  }
 }
 
 .btn-text-primary {
@@ -97,6 +119,24 @@ body {
 @media screen and (min-width: 951px) {
   .secondary-btn {
     width: 135px;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .secondary-btn:hover {
+    background-color: var(--primary-darkgreen-hover);
+    /* border: 1px solid var(); */
+    transition: all 1s ease;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 0.3);
+    /* filter: drop-shadow(-1px 0px 1px rgb(0 0 0 / 0.3)); */
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .secondary-btn:hover .arrow-icon {
+    transform: translate(30%, 0);
+    transition: all 1s ease;
+    filter: var(--svg-primary-green) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
   }
 }
 
@@ -160,6 +200,12 @@ body {
   }
 }
 
+@media screen and (min-width: 950px) {
+  .arrow-btn-border:hover {
+    border: 2px solid var(--primary-white);
+  }
+}
+
 .arow-btn {
   background-color: var(--primary-white);
   width: 90%;
@@ -172,26 +218,33 @@ body {
   cursor: pointer;
 }
 
-.arrow-icon-left {
-  transform: rotate(180deg);
+@media screen and (min-width: 950px) {
+  .arow-btn:hover {
+    background-color: var(--primary-white-hover);
+    transition: all 1s ease;
+  }
 }
 
 .arrow-icon-right,
 .arrow-icon-left {
   width: 16px;
+  filter: var(--svg-primary-darkgreen);
 }
 
-.arrow-icon-right path {
-  fill: red;
+@media screen and (min-width: 950px) {
+  .arow-btn:hover .arrow-icon-right {
+    transform: translate(40%, 0);
+    transition: all 1s ease;
+    filter: var(--svg-primary-green) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
+  }
 }
 
-svg path {
-  fill: red !important;
-}
-
-.s0 {
-  fill: red !important;
-  color: red !important;
+@media screen and (min-width: 950px) {
+  .arow-btn:hover .arrow-icon-left {
+    transform: translate(-40%, 0);
+    transition: all 1s ease;
+    filter: var(--svg-primary-green) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
+  }
 }
 
 :root {
@@ -221,6 +274,15 @@ svg path {
     rgba(240, 240, 240, 0.4)
   );
   --text-hover-link: rgba(255, 255, 255, 0.6);
+
+  --primary-darkgreen-hover: rgb(58 66 53);
+  --primary-white-hover: rgb(223 223 223);
+
+  --svg-primary-green: invert(42%) sepia(35%) saturate(400%) hue-rotate(72deg) brightness(95%) contrast(89%);
+  --svg-secondary-green: invert(39%) sepia(4%) saturate(2627%) hue-rotate(107deg) brightness(106%) contrast(74%);
+  --svg-primary-white: invert(100%);
+  --svg-primary-darkgreen: invert(30%) sepia(12%) saturate(559%) hue-rotate(55deg) brightness(91%) contrast(90%);
+  --svg-primary-white-hover: invert(100%) sepia(40%) saturate(18%) hue-rotate(292deg) brightness(90%) contrast(95%);
 
   /* --------------------------------- FONTS -------------------------------- */
   --primary-font: "Roboto";
@@ -587,6 +649,13 @@ footer {
   }
 }
 
+@media screen and (min-width: 951px) {
+  .footer-grid a:hover {
+    color: var(--primary-white-hover);
+    transition: all 1s ease;
+  }
+}
+
 .footer-address {
   grid-area: footer-address;
   display: flex;
@@ -641,12 +710,20 @@ footer {
 .some-icon {
   width: 35px;
   margin-top: 15px;
+  filter: var(--svg-primary-white);
 }
 
 @media screen and (min-width: 951px) {
   .some-icon {
     width: 45px;
     margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .some-icon:hover {
+    filter: var(--svg-primary-white-hover);
+    transition: all 1s ease;
   }
 }
 
@@ -1281,7 +1358,13 @@ footer {
 }
 
 .modal-discount h3 {
-  transform: translateY(-14px);
+  transform: translateY(-8px);
+}
+
+@media screen and (min-width: 950px) {
+  .modal-discount h3 {
+    transform: translateY(-12px);
+  }
 }
 
 .modal-padding {
@@ -1371,6 +1454,15 @@ footer {
   float: right;
   width: 22px;
   cursor: pointer;
+  filter: var(--svg-primary-white);
+}
+
+@media screen and (min-width: 950px) {
+  .close-icon:hover {
+    filter: var(--svg-primary-darkgreen);
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+  }
 }
 
 .modal-img-overlay {

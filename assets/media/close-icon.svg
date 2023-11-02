@@ -1,6 +1,6 @@
 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161 127" width="161" height="127">
 	<style>
-		.s0 { fill: #ffffff } 
+		.s0 { fill: #000000 } 
 	</style>
 	<path id="Layer" class="s0" d="m131.5 126.5l-80-76.7-51.5-49.8h27.2l133.3 126.5z"/>
 	<path id="Layer" class="s0" d="m29 126.5l80-76.7 51.5-49.8h-27.2l-133.3 126.5z"/>
