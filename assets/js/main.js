@@ -9,7 +9,7 @@ function onClickMenu() {
 
 // ------------------ MEMBERSHIP BENEFITS SLIDER ------------------
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".membership-benefits-cards");
+  const slider = document.querySelector(".cards-container");
   const cards = document.querySelectorAll(".membership-benefits-card");
   const prevBtn = document.querySelector(".prev-btn");
   const nextBtn = document.querySelector(".next-btn");
@@ -19,23 +19,29 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentTranslate = 0;
   let prevTranslate = 0;
   let currentIndex = 0;
-  const cardWidth = cards[0].offsetWidth;
+  let cardWidth;
+
+  function setCardWidth() {
+    cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
+  }
+
+  setCardWidth();
+
+  window.addEventListener("resize", setCardWidth);
 
   function updateSliderPosition() {
-    cards.forEach((card, index) => {
-      card.style.transform = `translateX(${currentTranslate}px)`;
-    });
+    slider.style.transform = `translateX(${currentTranslate}px)`;
   }
 
   function snapToSlide() {
     currentIndex = Math.round(-currentTranslate / cardWidth);
+    const maxIndex = cards.length - 1;
     const targetTranslate = -currentIndex * cardWidth;
-    const maxTranslate = (cards.length - 1) * cardWidth;
 
-    if (currentTranslate > 0) {
-      currentIndex = cards.length - 1;
-      currentTranslate = -maxTranslate;
-    } else if (currentTranslate < -maxTranslate) {
+    if (currentIndex < 0) {
+      currentIndex = maxIndex;
+      currentTranslate = -currentIndex * cardWidth;
+    } else if (currentIndex > maxIndex) {
       currentIndex = 0;
       currentTranslate = 0;
     }
@@ -43,33 +49,31 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSliderPosition();
   }
 
-  cards.forEach((card, index) => {
-    card.addEventListener("mousedown", dragStart);
-    card.addEventListener("touchstart", dragStart);
-    card.addEventListener("mouseup", dragEnd);
-    card.addEventListener("touchend", dragEnd);
-    card.addEventListener("mousemove", drag);
-    card.addEventListener("touchmove", drag);
+  function dragStart(e) {
+    isDragging = true;
+    startPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+    prevTranslate = currentTranslate;
+  }
 
-    function dragStart(e) {
-      isDragging = true;
-      startPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
-      prevTranslate = currentTranslate;
-    }
+  function drag(e) {
+    if (!isDragging) return;
+    const currentPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+    const diff = currentPosition - startPosition;
+    currentTranslate = prevTranslate + diff;
+    updateSliderPosition();
+  }
 
-    function drag(e) {
-      if (!isDragging) return;
-      const currentPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
-      const diff = currentPosition - startPosition;
-      currentTranslate = prevTranslate + diff;
-      updateSliderPosition();
-    }
+  function dragEnd() {
+    isDragging = false;
+    snapToSlide();
+  }
 
-    function dragEnd() {
-      isDragging = false;
-      snapToSlide();
-    }
-  });
+  slider.addEventListener("mousedown", dragStart);
+  slider.addEventListener("touchstart", dragStart);
+  slider.addEventListener("mouseup", dragEnd);
+  slider.addEventListener("touchend", dragEnd);
+  slider.addEventListener("mousemove", drag);
+  slider.addEventListener("touchmove", drag);
 
   prevBtn.addEventListener("click", () => {
     currentIndex--;
@@ -86,29 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateSliderPosition();
 });
 
-/* MODAL */
-/* var modal = document.getElementById("benefitsModal");
-
-var btn = document.getElementById("modalOpenBtn");
-
-var span = document.getElementsByClassName("modal-close-btn")[0];
-
-btn.onclick = function () {
-  modal.style.display = "block";
-};
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}; */
-
-// test
-// Get the modal
+//MODAL
 var modalparent = document.getElementsByClassName("modal_multi");
 var modal_btn_multi = document.getElementsByClassName("readMore_multi");
 var span_close_multi = document.getElementsByClassName("close_multi");
