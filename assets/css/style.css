@@ -760,8 +760,8 @@ footer {
 }
 
 @media (min-width: 951px) {
-  .hero{
-height: 96vh;
+  .hero {
+    height: 96vh;
   }
 }
 
@@ -1664,20 +1664,21 @@ height: 96vh;
     grid-template-rows: 1fr 1fr;
   }
 
-.instagram-gallery-item {
-  width: 100%;
-  display: none !important;
-}
+  .instagram-gallery-item {
+    width: 100%;
+    display: none !important;
+  }
 
-.instagram-gallery-item:nth-of-type(1),
-.instagram-gallery-item:nth-of-type(2),
-.instagram-gallery-item:nth-of-type(3),
-.instagram-gallery-item:nth-of-type(4) {
-  display: block !important;
+  .instagram-gallery-item:nth-of-type(1),
+  .instagram-gallery-item:nth-of-type(2),
+  .instagram-gallery-item:nth-of-type(3),
+  .instagram-gallery-item:nth-of-type(4) {
+    display: block !important;
+  }
 }
 
 @media (min-width: 672px) {
-  .instagram-gallery-list[data-feed_layout=gallery] {
+  .instagram-gallery-list[data-feed_layout="gallery"] {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
@@ -1688,7 +1689,7 @@ height: 96vh;
 }
 
 @media (min-width: 951px) {
-  .instagram-gallery-list[data-feed_layout=gallery] {
+  .instagram-gallery-list[data-feed_layout="gallery"] {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 
@@ -1735,7 +1736,6 @@ height: 96vh;
 .calendar-event-checkbox input {
   margin: 3px 6px 0 0;
 }
-
 
 /* .calendar-select-conatiner {
   display: flex;
@@ -1893,8 +1893,4 @@ height: 96vh;
   }
 } */
 
-
-
-
-/* 
-https: //www.advancedcustomfields.com/resources/creating-wp-archive-custom-field-filter/ */
+/* https: //www.advancedcustomfields.com/resources/creating-wp-archive-custom-field-filter/ */
