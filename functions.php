@@ -4,3 +4,7 @@
 require 'functions/navigation.php';
 require 'functions/scripts.php';
 require 'functions/utilities.php';
+require 'functions/aska_calendar.php';
+
+?>
+

@@ -748,7 +748,8 @@ footer {
 
 /* ======================================================================== */
 /* ================================ HERO ================================== */
-.hero {
+.hero,
+.secondary-hero {
   width: 100%;
   height: 1000px;
   background-image: url(../media/hero-img.jpg);
@@ -758,12 +759,26 @@ footer {
   background-position-y: 80%;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .hero {
+    height: 96vh;
+  }
+}
+
+@media (min-width: 951px) {
+  .hero,
+  .secondary-hero {
     background-size: 100%;
     background-position-y: 50%;
     height: 96vh;
   }
+}
+
+.secondary-hero {
+  height: 300px;
+  background-position-y: 33.5%;
+  background-image: url(../media/calendar-img.jpg);
+  position: relative;
 }
 
 .hero-content {
@@ -777,7 +792,6 @@ footer {
 
 @media screen and (min-width: 951px) {
   .hero-content {
-    /* margin-top: 60vh; */
     margin-top: 50vh;
   }
 }
@@ -1652,6 +1666,231 @@ footer {
 
   .instagram-gallery-item {
     width: 100%;
+    display: none !important;
+  }
+
+  .instagram-gallery-item:nth-of-type(1),
+  .instagram-gallery-item:nth-of-type(2),
+  .instagram-gallery-item:nth-of-type(3),
+  .instagram-gallery-item:nth-of-type(4) {
     display: block !important;
   }
 }
+
+@media (min-width: 672px) {
+  .instagram-gallery-list[data-feed_layout="gallery"] {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .instagram-gallery-item:nth-of-type(5),
+  .instagram-gallery-item:nth-of-type(6) {
+    display: block !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .instagram-gallery-list[data-feed_layout="gallery"] {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .instagram-gallery-item {
+    display: block !important;
+  }
+}
+
+/* ======================================================================== */
+/* ================================ CALENDAR ============================== */
+.calendar-select-section {
+  background-color: var(--secondary-green);
+  box-shadow: var(--box-shadow);
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-select-section-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-event-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 130px;
+  font-family: var(--primary-font);
+  color: var(--primary-white);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.calendar-event-checkbox input {
+  margin: 3px 6px 0 0;
+}
+
+/* .calendar-select-conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+} */
+
+/* @media (min-width: 672px) {
+  .calendar-select-conatiner {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 951px) {
+  .calendar-select-conatiner {
+    gap: 40px;
+  }
+} */
+
+/* .calender-select-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+} */
+
+/* The container
+.container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
+
+/* Hide the browser's default checkbox */
+/* .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+} */
+
+/* Create a custom checkbox */
+/* .checkmark {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 2px;
+} */
+
+/* On mouse-over, add a grey background color */
+/* .container:hover input~.checkmark {
+  background-color: #ccc;
+} */
+
+/* Create the checkmark/indicator (hidden when not checked) */
+/* .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+} */
+
+/* Show the checkmark when checked */
+/* .container input:checked~.checkmark:after {
+  display: block;
+} */
+
+/* Style the checkmark/indicator */
+/* .container .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 4px;
+  height: 9px;
+  border: solid var(--primary-darkgreen);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} */
+
+/* ------------------------------ EVENT CARD ------------------------------ */
+/* .calendar-event-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+  gap: 10%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.event-card-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.event-card-date p {
+  font-weight: 400;
+}
+
+.event-card-border {
+  border: 2px solid var(--secondary-green);
+  z-index: 1;
+}
+
+.calendar_date_day {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.calendar_date_month {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.calendar_date_year {
+  font-size: 11px;
+}
+
+.event-card-bg {
+  height: 120px;
+  z-index: 0;
+}
+
+@media (min-width: 672px) {
+  .event-card-bg {
+    height: 140px;
+  }
+}
+
+.event-card-bg h4 {
+  text-transform: none;
+  height: 30px;
+}
+
+@media (min-width: 672px) {
+  .event-card-bg h4 {
+    height: 40px;
+  }
+} */
+
+/* https: //www.advancedcustomfields.com/resources/creating-wp-archive-custom-field-filter/ */
