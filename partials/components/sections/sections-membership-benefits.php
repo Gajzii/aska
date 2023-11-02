@@ -50,14 +50,14 @@
         <div class="arrow-btn-border">
             <button class="arow-btn prev-btn">
                 <img class="arrow-icon-left" alt="Pil ikon til venstre"
-                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-green.svg" />
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-left.svg" />
             </button>
         </div>
 
         <div class="arrow-btn-border">
             <button class="arow-btn next-btn">
                 <img class="arrow-icon-right" alt="Pil ikon til venstre"
-                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow-green.svg" />
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
             </button>
         </div>
     </div>
@@ -102,6 +102,5 @@
 
     </div>
 </div>
-<!-- -- -->
 <?php endwhile; ?>
 <?php endif; ?>
