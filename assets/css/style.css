@@ -1446,42 +1446,46 @@ footer {
   height: 150px;
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .calendar-select-section-inner {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-event-checkbox {
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
-
-
-  line-height: 30px;
+  justify-content: flex-start;
+  width: 130px;
+  font-family: var(--primary-font);
+  color: var(--primary-white);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 5px 0;
 }
 
-@media (min-width: 672px) {
-  .calendar-select-section-inner {
-    line-height: unset;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+.calendar-event-checkbox input {
+  margin: 3px 6px 0 0;
 }
 
-@media (min-width: 951px) {
-  .calendar-select-section-inner {
-    gap: 40px
-  }
-}
 
-.calendar-select-conatiner {
+/* .calendar-select-conatiner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-}
+} */
 
-@media (min-width: 672px) {
+/* @media (min-width: 672px) {
   .calendar-select-conatiner {
     flex-direction: row;
     align-items: center;
@@ -1493,16 +1497,16 @@ footer {
   .calendar-select-conatiner {
     gap: 40px;
   }
-}
+} */
 
-.calender-select-item {
+/* .calender-select-item {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
-}
+} */
 
-/* The container */
+/* The container
 .container {
   display: block;
   position: relative;
@@ -1514,19 +1518,19 @@ footer {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+} */
 
 /* Hide the browser's default checkbox */
-.container input {
+/* .container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
-}
+} */
 
 /* Create a custom checkbox */
-.checkmark {
+/* .checkmark {
   position: absolute;
   top: 7px;
   left: 0;
@@ -1534,27 +1538,27 @@ footer {
   width: 15px;
   background-color: #eee;
   border-radius: 2px;
-}
+} */
 
 /* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
+/* .container:hover input~.checkmark {
   background-color: #ccc;
-}
+} */
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+/* .checkmark:after {
   content: "";
   position: absolute;
   display: none;
-}
+} */
 
 /* Show the checkmark when checked */
-.container input:checked~.checkmark:after {
+/* .container input:checked~.checkmark:after {
   display: block;
-}
+} */
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+/* .container .checkmark:after {
   left: 4px;
   top: 0px;
   width: 4px;
@@ -1564,10 +1568,10 @@ footer {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
 
 /* ------------------------------ EVENT CARD ------------------------------ */
-.calendar-event-section {
+/* .calendar-event-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1628,7 +1632,10 @@ footer {
   .event-card-bg h4 {
     height: 40px;
   }
-}
+} */
+
+
+
 
 /* 
 https: //www.advancedcustomfields.com/resources/creating-wp-archive-custom-field-filter/ */
