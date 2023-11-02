@@ -13,80 +13,101 @@
         <div class="calendar-select-conatiner">
             <label class="container calender-select-item">
                 <h3 class="calendar-select-text">Klubdage</h3>
-                <input type="checkbox">
+                <input type="checkbox" name="categories[]" id="klubdage">
                 <span class="checkmark"></span>
             </label>
             <label class="container calender-select-item">
                 <h3 class="calendar-select-text">Stævner</h3>
-                <input type="checkbox">
+                <input type="checkbox" name="categories[]" id="staevner">
                 <span class="checkmark"></span>
             </label>
             <label class="container calender-select-item">
                 <h3 class="calendar-select-text">Ungdom</h3>
-                <input type="checkbox">
+                <input type="checkbox" name="categories[]" id="ungdom">
                 <span class="checkmark"></span>
             </label>
         </div>
         <div class="calendar-select-conatiner">
             <label class="container calender-select-item">
                 <h3 class="calendar-select-text">Ture</h3>
-                <input type="checkbox">
+                <input type="checkbox" name="categories[]" id="ture">
                 <span class="checkmark"></span>
             </label>
             <label class="container calender-select-item">
-                <h3 class="calendar-select-text">Stævner</h3>
-                <input type="checkbox">
+                <h3 class="calendar-select-text">Foredrag og kursus</h3>
+                <input type="checkbox" name="categories[]" id="foredrag og kursus">
                 <span class="checkmark"></span>
             </label>
+            
         </div>
+        <input type="submit" value="Filter">
     </div>
 </div>
 
-<div class="calendar-event-section">
-    <?php if ( have_rows('calendar_item') ) : ?>
-    <div class="event-card">
-        <?php while ( have_rows('calendar_item') ) : the_row(); ?>
-            
-        <?php
-            $calendar_title = get_sub_field('calendar-title');
-            $calendar_subtitle = get_sub_field('calendar-subtitle');
-            $calendar_description = get_sub_field('calendar-description');
-            $calendar_event_category = get_sub_field('calendar-event-category');
-            $calendar_date_day = get_sub_field('calendar-date-day');
-            $calendar_date_month = get_sub_field('calendar-date-month');
-            $calendar_date_year = get_sub_field('calendar-date-year');
-        ?>
-        <!-- <div class="event-card-inner">
-            
-        </div> -->
-         <div class="membership-benefits-card">
-                <div class="benefits-icon-border event-card-border">
-                    <div class="benefits-icon-bg event-card-date">
-                        <p class="calendar_date_day"><?= $calendar_date_day;?></p>
-                        <p class="calendar_date_month"><?= $calendar_date_month;?></p>
-                        <p class="calendar_date_year"><?= $calendar_date_year;?></p>
-                    </div>
-                </div>
-                <div class="benefits-card-bg event-card-bg">
-                    <h4><?= $calendar_title;?></h4>
-                    <div class="benefits-btn">
-                        <div class="secondary-btn-border">
-                            <button class="readMore_multi secondary-btn btn-text-secondary">
-                                Læs mere
-                                <img class="arrow-icon" alt="Pil ikon til højre"
-                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
-                            </button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        <?php endwhile; ?>
 
-    </div>
-    <?php endif; ?>
-</div>
+<?php
+$selected_categories = array(); // Initialize an array to store the selected categories
 
+if (isset($_GET['category'])) {
+    $selected_categories = (array)$_GET['category']; // Get the selected categories from the URL parameter
+}
+
+$args = array(
+    'post_type' => 'kalender',
+    'posts_per_page' => -1,
+);
+
+if (!empty($selected_categories)) {
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'category', // Replace with the taxonomy you're using
+            'field'    => 'slug',
+            'terms'    => $selected_categories,
+        ),
+    );
+}
+
+$custom_query = new WP_Query($args);
+
+// Display category filter checkboxes
+$categories = get_terms(array(
+    'taxonomy' => 'category', // Replace with your taxonomy name
+    'hide_empty' => false, // Show even empty categories
+));
+
+echo '<form method="get" action="' . esc_url(get_permalink()) . '">'; // Set the form action to the current page's URL
+
+echo '<fieldset>';
+echo '<legend>Filter by Category</legend>';
+
+foreach ($categories as $category) {
+    echo '<label>';
+    echo '<input type="checkbox" name="category[]" value="' . $category->slug . '"';
+    if (in_array($category->slug, $selected_categories)) {
+        echo ' checked';
+    }
+    echo '>';
+    echo $category->name;
+    echo '</label><br>';
+}
+
+echo '<input type="submit" value="Apply Filter">';
+echo '</fieldset>';
+echo '</form>';
+
+if ($custom_query->have_posts()) {
+    echo '<ul>';
+    while ($custom_query->have_posts()) {
+        $custom_query->the_post();
+        echo '<li><a style="color:black;" ref="' . get_permalink() . '">' . get_the_title() . '</a>' . get_field('calendar-date') . '</li>';
+    }
+    echo '</ul>';
+} else {
+    echo 'No posts found.';
+}
+
+wp_reset_postdata();
+?>
 
 
 <div style="height: 1000px"></div>
