@@ -76,18 +76,14 @@ body::-webkit-scrollbar-thumb:hover {
   --text-shadow: 1px 1px 5px rgb(0, 0, 0, 80%);
   --box-shadow: 0px 3px 8px 0px rgb(0, 0, 0, 40%);
   --box-opacity-secondary-green: rgb(86, 119, 107, 60%);
-  --primary-box-gradient-primary-green: -webkit-linear-gradient(
-    0deg,
-    rgb(84, 124, 85),
-    rgb(84, 124, 85),
-    rgba(240, 240, 240, 0.4)
-  );
-  --secondary-box-gradient-primary-green: -webkit-linear-gradient(
-    0deg,
-    rgba(240, 240, 240, 0.4),
-    rgb(84, 124, 85),
-    rgba(240, 240, 240, 0.4)
-  );
+  --primary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
+      rgb(84, 124, 85),
+      rgb(84, 124, 85),
+      rgba(240, 240, 240, 0.4));
+  --secondary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
+      rgba(240, 240, 240, 0.4),
+      rgb(84, 124, 85),
+      rgba(240, 240, 240, 0.4));
   --text-hover-link: rgba(255, 255, 255, 0.6);
 
   --primary-darkgreen-hover: rgb(58 66 53);
@@ -130,6 +126,7 @@ a {
 }
 
 @media screen and (min-width: 951px) {
+
   a,
   p {
     font-size: 14px;
@@ -766,6 +763,7 @@ footer {
 }
 
 @media (min-width: 951px) {
+
   .hero,
   .secondary-hero {
     background-size: 100%;
@@ -1649,11 +1647,7 @@ footer {
   background: var(--secondary-box-gradient-primary-green);
 }
 
-#instagram-gallery-modal-0
-  .instagram-gallery-modal
-  .instagram-gallery-modal__body
-  .instagram-gallery-modal__media-sidebar
-  .instagram-gallery-modal__media_description {
+#instagram-gallery-modal-0 .instagram-gallery-modal .instagram-gallery-modal__body .instagram-gallery-modal__media-sidebar .instagram-gallery-modal__media_description {
   color: var(--secondary-black);
 }
 
@@ -1711,12 +1705,31 @@ footer {
 }
 
 .calendar-select-section-inner {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 150px 140px;
+  grid-template-rows: 1fr 1fr 1fr;
   margin-bottom: 10px;
+  align-items: center;
+  height: 90px;
+  column-gap: 20px;
+}
+
+@media (min-width: 672px) {
+  .calendar-select-section-inner {
+    grid-template-columns: 150px 140px 80px;
+    grid-template-rows: 1fr 1fr;
+    height: 70px;
+    margin: 0 auto;
+    column-gap: 30px;
+  }
+}
+
+@media (min-width: 951px) {
+  .calendar-select-section-inner {
+    grid-template-columns: 150px 140px 80px 75px 50px 70px;
+    grid-template-rows: 1fr;
+    height: 30px;
+  }
 }
 
 .calendar-event-checkbox {
@@ -1724,17 +1737,16 @@ footer {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 130px;
   font-family: var(--primary-font);
   color: var(--primary-white);
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 12px;
   margin: 5px 0;
 }
 
 .calendar-event-checkbox input {
-  margin: 3px 6px 0 0;
+  margin: 0 6px 0 0;
 }
 
 /* .calendar-select-conatiner {
