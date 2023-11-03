@@ -69,12 +69,26 @@ echo '</div>';
 
 
 if ($custom_query->have_posts()) {
-    echo '<ul>';
+    echo '<div class="membership-benefits-card">';
     while ($custom_query->have_posts()) {
         $custom_query->the_post();
-        echo '<li><a style="color:black;" ref="' . get_permalink() . '">' . get_the_title() . '</a>' . get_field('calendar-date') . '</li>';
+        echo '<div class="benefits-icon-border">';
+            echo '<div class="benefits-icon-bg">';
+                echo '<h3>' . get_field('calendar-date-day') . '</h3>';
+                echo '<h3>' . get_field('calendar-date-month') . '</h3>';
+                echo '<h3>' . get_field('calendar-date-year') . '</h3>';
+            echo '</div>';
+        echo '</div>';
+        echo '<div class="benefits-card-bg">';
+            echo '<h4>' . get_the_title() . '</h4>';
+            echo '<div class="benefits-btn">';
+                echo '<div class="secondary-btn-border">';
+                    echo '<button class="readMore_multi secondary-btn btn-text-secondary">Læs mere</button>';
+                echo '</div>';
+            echo '</div>';
+        echo '</div>';
     }
-    echo '</ul>';
+    echo '</div>';
 } else {
     echo 'No posts found.';
 }
