@@ -44,7 +44,7 @@ $categories = get_terms(array(
 
 
 echo '<div class="calendar-select-section">';
-    echo '<div class="page-margin-inner">';
+    echo '<div class="">';
 
         echo '<form method="get" action="' . esc_url(get_permalink()) . '">'; // Set the form action to the current page's URL
                 echo '<div class="calendar-select-section-inner">';
@@ -64,7 +64,6 @@ echo '<div class="calendar-select-section">';
         echo '</form>'; 
     echo '</div>'; 
 echo '</div>';
-
 
 
 
