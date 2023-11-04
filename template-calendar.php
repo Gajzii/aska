@@ -39,10 +39,6 @@ $categories = get_terms(array(
     'hide_empty' => false, // Show even empty categories
 ));
 
-
-
-
-
 echo '<div class="calendar-select-section">';
     echo '<div class="">';
 
@@ -65,8 +61,10 @@ echo '<div class="calendar-select-section">';
     echo '</div>'; 
 echo '</div>';
 
-
-
+$timestamp = strtotime(get_field('calendar-date'));
+$day = date('d', $timestamp);
+$mon = date('m', $timestamp);
+$year = date('Y', $timestamp);
 
 if ($custom_query->have_posts()) {
     echo '<div class="membership-benefits-card">';
@@ -77,6 +75,7 @@ if ($custom_query->have_posts()) {
                 echo '<h3>' . get_field('calendar-date-day') . '</h3>';
                 echo '<h3>' . get_field('calendar-date-month') . '</h3>';
                 echo '<h3>' . get_field('calendar-date-year') . '</h3>';
+                echo '<h3>' . get_field('calendar-date') . '</h3>';
             echo '</div>';
         echo '</div>';
         echo '<div class="benefits-card-bg">';
