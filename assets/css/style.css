@@ -1694,6 +1694,7 @@ footer {
 
 /* ======================================================================== */
 /* ================================ CALENDAR ============================== */
+/* -------------------------------- FILTER -------------------------------- */
 .calendar-select-section {
   background-color: var(--secondary-green);
   box-shadow: var(--box-shadow);
@@ -1747,4 +1748,73 @@ footer {
 
 .calendar-event-checkbox input {
   margin: 0 6px 0 0;
+}
+
+/* ------------------------------- EVENT CARD ----------------------------- */
+.event-cards-container {
+  transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1317px;
+}
+
+@media (min-width: 672px) {
+  .event-cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    ;
+  }
+}
+
+@media (min-width: 951px) {
+  .event-cards-container {
+    grid-template-columns: repeat(5, 1fr);
+    ;
+  }
+}
+
+.event-card {
+  margin: 0;
+}
+
+.event-card-bg {
+  width: 150px;
+  height: 140px;
+  padding-top: 40px !important;
+}
+
+@media (min-width: 951px) {
+  .event-card-bg {
+    width: 170px;
+    height: 160px;
+  }
+}
+
+.event-card-bg h4 {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.event-card-border {
+  border: 1.5px solid var(--secondary-green);
+  z-index: 2;
+}
+
+.event-dag {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.event-maaned {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.event-btn {
+  transform: translate(0%, 160%);
+}
+
+@media (min-width: 951px) {
+  .event-btn {
+    transform: translate(0%, 200%);
+  }
 }
