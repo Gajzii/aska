@@ -1799,6 +1799,12 @@ footer {
   z-index: 2;
 }
 
+.event-date {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .event-dag {
   font-size: 24px;
   line-height: 26px;
