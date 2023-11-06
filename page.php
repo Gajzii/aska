@@ -9,7 +9,6 @@
 </div>
 
 <div class="page-margin">
-
     <div class="page-cards-flex">
 
         <!-- PAGE CARD CONTENT -->
@@ -32,8 +31,8 @@
                     <p class="page-card-description"><?= $page_cards_description ?></p>
 
 
-                    <div class="secondary-btn-border">
-                        <button class="readMore_multi secondary-btn btn-text-secondary">
+                    <div class="secondary-btn-border page-read-more-btn">
+                        <button class="readMore_multi secondary-btn btn-text-secondary page-read-more-btn-secondary">
                             Læs mere
                             <img class="arrow-icon" alt="Pil ikon til højre"
                                 src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
@@ -80,3 +79,6 @@
 
 </div>
 <?php get_footer(); ?>
+
+
+<!-- Mangler at få styr på bestyrelsen, tidspunkter hvor der er punktopstillet, og andre formateringer -->

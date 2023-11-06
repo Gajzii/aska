@@ -92,6 +92,7 @@ body::-webkit-scrollbar-thumb:hover {
 
   --primary-darkgreen-hover: rgb(58 66 53);
   --primary-white-hover: rgb(223 223 223);
+  --secondary-green-hover: rgb(73, 100, 90);
 
   --svg-primary-green: invert(42%) sepia(35%) saturate(400%) hue-rotate(72deg) brightness(95%) contrast(89%);
   --svg-secondary-green: invert(39%) sepia(4%) saturate(2627%) hue-rotate(107deg) brightness(106%) contrast(74%);
@@ -1987,22 +1988,22 @@ footer {
 .page-cards-flex {
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   justify-content: center;
   gap: 25px;
   margin: 60px 0;
-  justify-content: space-between;
+  justify-content: space-between flex-start;
 }
 
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .page-cards-flex {
-    gap: 20px 0;
+    justify-content: flex-start;
+    gap: 15px;
   }
 }
 
 @media screen and (min-width: 951px) {
   .page-cards-flex {
-    gap: 0;
+    justify-content: flex-start;
   }
 }
 
@@ -2011,7 +2012,7 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 210px;
+  height: 220px;
   position: relative;
   box-shadow: var(--box-shadow);
 }
@@ -2024,20 +2025,9 @@ footer {
 
 @media screen and (min-width: 951px) {
   .page-card {
-    width: calc(25% - 10px);
+    width: calc(25% - 20px);
   }
 }
-
-/* @media screen and (min-width: 672px) and (max-width: 950px) {
-  .page-card {
-    width: 30%;
-  }
-}
-@media screen and (min-width: 951px) {
-  .page-card {
-    width: 30%;
-  }
-} */
 
 .page-card-details {
   display: none;
@@ -2070,6 +2060,7 @@ footer {
 .page-card:hover > .page-card-heading {
   width: 100%;
   height: 100%;
+  backdrop-filter: grayscale(1) blur(2px);
 }
 
 .page-card-description {
@@ -2096,5 +2087,30 @@ footer {
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .page-modal-content {
     height: 420px;
+  }
+}
+
+.page-read-more-btn {
+  margin: auto;
+  background-color: var(--secondary-green);
+}
+
+.page-read-more-btn-secondary {
+  background-color: var(--secondary-green);
+}
+
+@media screen and (min-width: 951px) {
+  .page-read-more-btn-secondary:hover {
+    background-color: var(--secondary-green-hover);
+    transition: all 1s ease;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 0.3);
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .page-read-more-btn-secondary:hover .arrow-icon {
+    transform: translate(30%, 0);
+    transition: all 1s ease;
+    filter: var(--svg-secondary-green) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
   }
 }
