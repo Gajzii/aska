@@ -834,18 +834,6 @@ footer {
   position: relative;
 }
 
-.page-hero {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* @media (min-width: 951px) {
-  .page-hero {
-    height: 96vh;
-  }
-} */
-
 .hero-content {
   position: absolute;
   margin-top: 580px;
@@ -875,6 +863,24 @@ footer {
   }
 }
 
+/* PAGE HERO */
+.page-hero-container {
+  position: relative;
+  height: 300px;
+}
+
+.page-hero {
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+}
+
+.page-hero-content {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /* ---------------------------- HERO CTA --------------------------------- */
 .hero-cta {
   background-color: var(--secondary-green);
@@ -1977,3 +1983,112 @@ footer {
 } */
 
 /* https: //www.advancedcustomfields.com/resources/creating-wp-archive-custom-field-filter/ */
+
+/* =========================================================================================== */
+/* ===== PAGES (om aska, bliv en del af aska, stævner, ungdom, ture, foredrag og kursus) ===== */
+
+/* .page-cards-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.page-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-card-bg-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+}
+
+.page-card-heading {
+  width: 100%;
+  height: 45px;
+  background-color: var(--primary-green);
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.page-card-bg-img:hover > .page-card-heading {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+} */
+
+/*  */
+
+.page-cards-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.page-card {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 210px;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+  .page-card {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 951px) {
+  .page-card {
+    width: 30%;
+  }
+}
+.page-card-details {
+  display: none;
+}
+
+.page-card-heading {
+  transition: 0.5s;
+  width: 100%;
+  height: 20%;
+  background-color: var(--box-opacity-secondary-green);
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.page-card:hover > .page-card-heading > .page-card-details {
+  display: block;
+}
+
+.page-card:hover > .page-card-heading {
+  width: 100%;
+  height: 100%;
+}
+
+.page-card-description {
+  text-align: center;
+  padding: 15px 5%;
+}
