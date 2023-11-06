@@ -81,4 +81,4 @@
 <?php get_footer(); ?>
 
 
-<!-- Mangler at få styr på bestyrelsen, tidspunkter hvor der er punktopstillet, og andre formateringer -->
+<!-- Mangler at få styr på bestyrelsen, tidspunkter hvor der er punktopstillet, og andre formateringer. Overvej om h'jden skal ændres -->
