@@ -9,7 +9,8 @@
     <h1 class="secondary-hero-content">Kalender</h1>
 </div>
 
-<!-- ---------------------- Filter Checkboxes --------------------- -->
+<!-- -------------------- Filter functions -------------- -->
+<!-- ------------------- Category checkboxes ------------ -->
 <?php
 $selected_categories = array();
 
@@ -35,19 +36,31 @@ if (!empty($selected_categories)) {
     );
 }
 
+// ------------------- Event search ----------------------- //
+if (isset($_GET['event_search'])) {
+    $search_term = sanitize_text_field($_GET['event_search']);
+    $args['s'] = $search_term;
+}
+
+// ------------------- Category checkboxes ---------------- //
 $custom_query = new WP_Query($args);
 
 $categories = get_terms(array(
     'taxonomy' => 'category',
     'hide_empty' => false,
-));
+)); 
+    $categories = array_filter($categories, function ($category) {
+    $hidden_category_ids = array(10);
+    return !in_array($category->term_id, $hidden_category_ids);
+});
+?>
 
-echo '<div class="calendar-select-section">';
-    echo '<div class="">';
+    <div class="calendar-select-section">
+        <div class="">
 
-        echo '<form method="get" action="' . esc_url(get_permalink()) . '">'; // Set the form action to the current page's URL
-                echo '<div class="calendar-select-section-inner">';
-                foreach ($categories as $category) {
+            <form class="calendar-form" method="get" action="<?= esc_url(get_permalink()) ?>">
+                <div class="calendar-select-section-inner">
+                <?php foreach ($categories as $category) {
                     echo '<label class="calendar-event-checkbox">';
                     echo '<input type="checkbox" name="category[]" value="' . $category->slug . '"';
                     if (in_array($category->slug, $selected_categories)) {
@@ -57,14 +70,37 @@ echo '<div class="calendar-select-section">';
                     echo $category->name;
                     echo '</label>';
                 }
-                echo '</div>';
-                    echo '<input type="submit" value="Filtrér">';
+                ?>
+                    </div>
+                    <div class="event-btn-container">
+                        <input type="submit" value="" class="secondary-btn-border filter-btn">
+                            <button class="filter-btn-inner readMore_multi secondary-btn btn-text-secondary">Filtrér valgte<img class="arrow-icon" alt="Pil ikon til højre"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" /></button>
+                        </input>
+                        <a href="<?= esc_url(get_permalink()) ?>" class="clear-category-button">Nulstil filtrering</a>
+                    </div>
 
-        echo '</form>'; 
-    echo '</div>'; 
-echo '</div>';
+            </form>
+        </div>
+    </div>
 
-// ---------------------- Event Cards --------------------- //
+<!-- ------------------- Event search ----------------------- -->
+<div class="calendar-search-section">
+    <form class="calendar-search-form" method="get" action="<?= esc_url(get_permalink()) ?>">
+        <input type="text" name="event_search" placeholder="Search for events" value="<?php echo isset($_GET['event_search']) ? esc_attr($_GET['event_search']) : ''; ?>">
+        <input type="submit" value="" class="search-btn-border">
+            <button class="search-btn">
+                <img class="search-icon" alt="Søge ikon"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/search-icon.svg" />
+            </button>
+        </input>
+    </form>
+</div>
+<a href="<?= esc_url(get_permalink()) ?>" class="clear-search-button">Nulstil søgning</a>
+</div>
+
+<!-- ---------------------- Event Cards --------------------- -->
+<?php
 echo '<div class="page-margin event-cards-container">';
 if ($custom_query->have_posts()) {
     
