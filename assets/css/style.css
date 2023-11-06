@@ -76,14 +76,18 @@ body::-webkit-scrollbar-thumb:hover {
   --text-shadow: 1px 1px 5px rgb(0, 0, 0, 80%);
   --box-shadow: 0px 3px 8px 0px rgb(0, 0, 0, 40%);
   --box-opacity-secondary-green: rgb(86, 119, 107, 60%);
-  --primary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
-      rgb(84, 124, 85),
-      rgb(84, 124, 85),
-      rgba(240, 240, 240, 0.4));
-  --secondary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
-      rgba(240, 240, 240, 0.4),
-      rgb(84, 124, 85),
-      rgba(240, 240, 240, 0.4));
+  --primary-box-gradient-primary-green: -webkit-linear-gradient(
+    0deg,
+    rgb(84, 124, 85),
+    rgb(84, 124, 85),
+    rgba(240, 240, 240, 0.4)
+  );
+  --secondary-box-gradient-primary-green: -webkit-linear-gradient(
+    0deg,
+    rgba(240, 240, 240, 0.4),
+    rgb(84, 124, 85),
+    rgba(240, 240, 240, 0.4)
+  );
   --text-hover-link: rgba(255, 255, 255, 0.6);
 
   --primary-darkgreen-hover: rgb(58 66 53);
@@ -126,7 +130,6 @@ a {
 }
 
 @media screen and (min-width: 951px) {
-
   a,
   p {
     font-size: 14px;
@@ -816,7 +819,6 @@ footer {
 }
 
 @media (min-width: 951px) {
-
   .hero,
   .secondary-hero {
     background-size: 100%;
@@ -831,6 +833,18 @@ footer {
   background-image: url(../media/calendar-img.jpg);
   position: relative;
 }
+
+.page-hero {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* @media (min-width: 951px) {
+  .page-hero {
+    height: 96vh;
+  }
+} */
 
 .hero-content {
   position: absolute;
@@ -1700,7 +1714,11 @@ footer {
   background: var(--secondary-box-gradient-primary-green);
 }
 
-#instagram-gallery-modal-0 .instagram-gallery-modal .instagram-gallery-modal__body .instagram-gallery-modal__media-sidebar .instagram-gallery-modal__media_description {
+#instagram-gallery-modal-0
+  .instagram-gallery-modal
+  .instagram-gallery-modal__body
+  .instagram-gallery-modal__media-sidebar
+  .instagram-gallery-modal__media_description {
   color: var(--secondary-black);
 }
 
