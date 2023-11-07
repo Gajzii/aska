@@ -113,6 +113,7 @@ h3,
 h4,
 h5,
 h6,
+ul,
 .btn-text-primary,
 .btn-text-secondary,
 .menutext {
@@ -1628,6 +1629,7 @@ footer {
 .modal-text p {
   overflow-y: auto;
   height: 160px;
+  padding-right: 5px;
 }
 
 @media screen and (min-width: 950px) {
@@ -2113,4 +2115,112 @@ footer {
     transition: all 1s ease;
     filter: var(--svg-secondary-green) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
   }
+}
+
+.modal-text-management {
+  width: 95%;
+  margin: auto;
+  text-align: left;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+  .modal-text-management {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .modal-text-management {
+    margin-top: 50px;
+  }
+}
+
+.modal-management-scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 285px;
+}
+
+.modal-management-scroll p {
+  padding-right: 5px;
+}
+
+.modal-management-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-management-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+}
+
+.modal-management-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--primary-darkgreen);
+  outline: 1px solid var(--secondary-green);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.modal-management-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(60, 67, 56);
+  cursor: pointer;
+}
+
+.modal-text-management h4 {
+  text-transform: uppercase;
+  height: 50px;
+  width: 90%;
+}
+
+.management-modal-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  padding-right: 20px;
+}
+
+.management-member {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 25px 6px;
+  gap: 10px;
+}
+
+@media screen and (min-width: 950px) {
+  .management-member {
+    width: calc(40% - 20px);
+  }
+}
+
+.management-member ul {
+  padding: 0 15px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.management-member li {
+  padding-left: 10px;
+}
+
+@media screen and (min-width: 951px) {
+  .management-member ul {
+    font-size: 14px;
+  }
+}
+
+.modal-management-img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.management-mail {
+  display: flex;
+}
+
+.mail-icon {
+  width: 14px;
+  margin-right: 8px;
+  filter: var(--svg-primary-white);
 }
