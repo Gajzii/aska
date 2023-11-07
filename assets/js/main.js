@@ -2,9 +2,24 @@
 function onClickMenu() {
   document.getElementById("dropdownmenu").classList.toggle("change");
   document.querySelector(".top-menu").classList.toggle("change");
-  document.querySelector(".header-background").classList.toggle("change-header-height");
-  document.querySelector(".header-inner").classList.toggle("change-header-height");
+  document
+    .querySelector(".header-background")
+    .classList.toggle("change-header-height");
+  document
+    .querySelector(".header-inner")
+    .classList.toggle("change-header-height");
   document.querySelector(".logo").classList.toggle("change-logo");
+}
+
+// ------------------ SHOW ALL PAST EVENT CARDS ------------------
+function showAllPastEvents() {
+  var pastEventCards = document.querySelectorAll(".past-event-card");
+  pastEventCards.forEach(function (card) {
+    card.style.display = "block";
+  });
+
+  // Hide the "Show All Past Events" button after showing all events
+  document.getElementById("showAllPastEventsButton").style.display = "none";
 }
 
 // ------------------ MEMBERSHIP BENEFITS SLIDER ------------------
@@ -22,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let cardWidth;
 
   function setCardWidth() {
-    cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
+    cardWidth =
+      cards[0].offsetWidth +
+      parseInt(window.getComputedStyle(cards[0]).marginRight);
   }
 
   setCardWidth();
@@ -57,7 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function drag(e) {
     if (!isDragging) return;
-    const currentPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+    const currentPosition = e.type.includes("mouse")
+      ? e.pageX
+      : e.touches[0].clientX;
     const diff = currentPosition - startPosition;
     currentTranslate = prevTranslate + diff;
     updateSliderPosition();

@@ -406,59 +406,6 @@ h5 {
   }
 }
 
-/* ---------- */
-/* search btn */
-.search-btn-border {
-  width: 50px;
-  height: 50px;
-  border: 2px solid var(--primary-darkgreen);
-  background-color: transparent;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 951px) {
-  .search-btn-border {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-.search-btn {
-  background-color: var(--primary-darkgreen);
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 950px) {
-  .search-btn:hover {
-    background-color: var(--primary-darkgreen-hover);
-    transition: all 1s ease;
-  }
-}
-
-.search-icon {
-  width: 20px;
-  filter: var(--svg-primary-white);
-}
-
-@media screen and (min-width: 950px) {
-  .search-btn:hover .search-icon {
-    transform: scale(1.1);
-    transition: all 1s ease;
-    filter: var(--svg-primary-white-hover) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
-  }
-}
-
 /* ======================================================================== */
 /* ================================ HEADER ================================ */
 .header-background {
@@ -883,6 +830,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 /* ---------------------------- HERO CTA --------------------------------- */
 .hero-cta {
   background-color: var(--secondary-green);
@@ -1772,19 +1720,42 @@ footer {
 
 /* ======================================================================== */
 /* ================================ CALENDAR ============================== */
+/* --------------------------- Category checkboxes ------------------------ */
 .calendar-select-section {
   background-color: var(--secondary-green);
   box-shadow: var(--box-shadow);
-  height: 150px;
+  height: 180px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+@media (min-width: 672px) {
+  .calendar-select-section {
+    height: 150px;
+  }
+}
+
+.calendar-select-form {
+  height: 145px;
+}
+
+@media (min-width: 672px) {
+  .calendar-select-form {
+    height: 125px;
+  }
+}
+
+@media (min-width: 951px) {
+  .calendar-select-form {
+    height: 85px;
+  }
+}
+
 .calendar-select-section-inner {
   display: grid;
-  grid-template-columns: 150px 140px;
+  grid-template-columns: 150px 135px;
   grid-template-rows: 1fr 1fr 1fr;
   margin-bottom: 10px;
   align-items: center;
@@ -1794,7 +1765,7 @@ footer {
 
 @media (min-width: 672px) {
   .calendar-select-section-inner {
-    grid-template-columns: 150px 140px 80px;
+    grid-template-columns: 185px 175px 95px;
     grid-template-rows: 1fr 1fr;
     height: 70px;
     margin: 0 auto;
@@ -1804,7 +1775,7 @@ footer {
 
 @media (min-width: 951px) {
   .calendar-select-section-inner {
-    grid-template-columns: 150px 140px 80px 75px 50px 70px;
+    grid-template-columns: 185px 175px 95px 90px 55px 85px;
     grid-template-rows: 1fr;
     height: 30px;
   }
@@ -1819,171 +1790,278 @@ footer {
   color: var(--primary-white);
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   margin: 5px 0;
 }
 
 .calendar-event-checkbox input {
-  margin: 0 6px 0 0;
+  margin: 2px 6px 0 0;
 }
 
-/* .calendar-select-conatiner {
+.event-btn {
+  transform: translate(0%, 160%);
+}
+
+@media (min-width: 951px) {
+  .event-btn {
+    transform: translate(0%, 200%);
+  }
+}
+
+.filter-btn {
+  position: relative;
+  border: 0;
+  z-index: 1;
+  width: 170px;
+}
+
+.filter-btn-inner {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 5px;
+  width: 160px;
+}
+
+.event-btn-container {
+  position: absolute;
+  transform: translate(50%);
+  right: 50%;
+  margin: 10px auto;
+}
+
+.event-btn-container-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.calendar-clear-checkboxes,
+.calendar-clear-search {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: var(--secondary-black);
+  cursor: pointer;
+}
+
+.calendar-clear-checkboxes {
+  color: var(--primary-white);
+}
+
+/* ------------------------------- Event search --------------------------- */
+.calendar-search-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-} */
+  margin-top: 40px;
+}
 
-/* @media (min-width: 672px) {
-  .calendar-select-conatiner {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+.calendar-search-form {
+  display: grid;
+  grid-template-columns: 160px 50px;
+  grid-template-rows: 1fr;
+  width: 210px;
+  align-items: center;
+  height: 50px;
+}
+
+.calendar-search-input {
+  height: 30px;
+  border: 2px solid var(--primary-darkgreen);
+  border-radius: 30px;
+  width: 180px;
+  background: transparent;
+  padding-left: 15px;
+  font-family: var(--primary-font);
+}
+
+.search-btn-container {
+  display: flex;
+  height: 50px;
+  margin: auto;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn-border {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: var(--primary-darkgreen);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+}
+
+.search-btn {
+  background-color: var(--primary-darkgreen);
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (min-width: 950px) {
+  .search-btn:hover {
+    background-color: var(--primary-darkgreen-hover);
+    transition: all 1s ease;
+  }
+}
+
+.search-icon {
+  width: 20px;
+  filter: var(--svg-primary-white);
+}
+
+@media screen and (min-width: 950px) {
+  .search-btn:hover .search-icon {
+    transform: scale(1.1);
+    transition: all 1s ease;
+    filter: var(--svg-primary-white-hover) drop-shadow(-1px 0px 2px rgb(0 0 0 / 0.3));
+  }
+}
+
+/* ------------------------------- EVENT CARD ----------------------------- */
+.calendar-header {
+  color: var(--secondary-black);
+  text-align: center;
+  margin-top: 60px;
+}
+
+.event-cards-container {
+  transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1317px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 672px) {
+  .event-cards-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (min-width: 951px) {
-  .calendar-select-conatiner {
-    gap: 40px;
+  .event-cards-container {
+    grid-template-columns: repeat(5, 1fr);
   }
-} */
-
-/* .calender-select-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row-reverse;
-} */
-
-/* The container
-.container {
-  display: block;
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-} */
-
-/* Hide the browser's default checkbox */
-/* .container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-} */
-
-/* Create a custom checkbox */
-/* .checkmark {
-  position: absolute;
-  top: 7px;
-  left: 0;
-  height: 15px;
-  width: 15px;
-  background-color: #eee;
-  border-radius: 2px;
-} */
-
-/* On mouse-over, add a grey background color */
-/* .container:hover input~.checkmark {
-  background-color: #ccc;
-} */
-
-/* Create the checkmark/indicator (hidden when not checked) */
-/* .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-} */
-
-/* Show the checkmark when checked */
-/* .container input:checked~.checkmark:after {
-  display: block;
-} */
-
-/* Style the checkmark/indicator */
-/* .container .checkmark:after {
-  left: 4px;
-  top: 0px;
-  width: 4px;
-  height: 9px;
-  border: solid var(--primary-darkgreen);
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
-
-/* ------------------------------ EVENT CARD ------------------------------ */
-/* .calendar-event-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 90%;
-  gap: 10%;
-  justify-content: space-around;
-  align-items: center;
 }
 
-.event-card-date {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+.event-card {
+  margin: 0;
+  animation: eventFadeIn 0.5s ease-in-out;
 }
 
-.event-card-date p {
-  font-weight: 400;
-}
+@keyframes eventFadeIn {
+  from {
+    opacity: 0;
+  }
 
-.event-card-border {
-  border: 2px solid var(--secondary-green);
-  z-index: 1;
-}
-
-.calendar_date_day {
-  font-size: 20px;
-  margin-top: 8px;
-}
-
-.calendar_date_month {
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
-.calendar_date_year {
-  font-size: 11px;
+  to {
+    opacity: 1;
+  }
 }
 
 .event-card-bg {
-  height: 120px;
-  z-index: 0;
+  width: 150px;
+  height: 140px;
+  padding-top: 40px !important;
 }
 
 @media (min-width: 672px) {
   .event-card-bg {
-    height: 140px;
+    width: 140px;
+  }
+}
+
+@media (min-width: 951px) {
+  .event-card-bg {
+    width: 170px;
+    height: 160px;
   }
 }
 
 .event-card-bg h4 {
+  word-wrap: break-word;
+  hyphens: auto;
   text-transform: none;
-  height: 30px;
+}
+
+.event-card-border {
+  border: 1.5px solid var(--secondary-green);
+  z-index: 2;
+}
+
+.event-date {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.event-dag {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.event-maaned {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.upcoming-container,
+.past-container {
+  margin-bottom: 80px;
+  align-items: center;
+}
+
+.past-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.past-event-card {
+  display: none;
+}
+
+.past-event-card:nth-child(-n + 6) {
+  display: block;
 }
 
 @media (min-width: 672px) {
-  .event-card-bg h4 {
-    height: 40px;
+  .past-event-card:nth-child(5),
+  .past-event-card:nth-child(6) {
+    display: none;
   }
-} */
 
-/* https: //www.advancedcustomfields.com/resources/creating-wp-archive-custom-field-filter/ */
+  .past-event-card:nth-child(-n + 4) {
+    display: block;
+  }
+}
+
+@media (min-width: 951px) {
+  .past-event-card:nth-child(6) {
+    display: none;
+  }
+
+  .past-event-card:nth-child(-n + 5) {
+    display: block;
+  }
+}
 
 /* =========================================================================================== */
 /* ===== PAGES (om aska, bliv en del af aska, stævner, ungdom, ture, foredrag og kursus) ===== */
