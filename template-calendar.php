@@ -143,19 +143,31 @@ if ($custom_query_upcoming->have_posts()) {
     echo '<h2 class="calendar-header">Kommende begivenheder</h2>';
     echo '<div class="page-margin event-cards-container upcoming-container">';
     while ($custom_query_upcoming->have_posts()) {
-        $custom_query_upcoming->the_post();
-        display_event_card();
+        $custom_query_upcoming->the_post();?>
+        
+       <?php display_event_card();
     }
     echo '</div>';
 }
 
 if ($custom_query_past->have_posts()) {
+    echo '<div class="past-container">';
     echo '<h2 class="calendar-header">Afviklede begivenheder</h2>';
-    echo '<div class="page-margin event-cards-container upcoming-container">';
+    echo '<div class="page-margin event-cards-container" id="event-cards-container-past">';
     while ($custom_query_past->have_posts()) {
-        $custom_query_past->the_post();
-        display_event_card();
+        $custom_query_past->the_post();?>
+        <div class="past-event-card">
+        <?php display_event_card();?>
+        </div>
+        <?php
     }
+    echo '</div>';?>
+    <div class="secondary-btn-border" id="showAllPastEventsButton" onclick="showAllPastEvents()">
+        <button class="readMore_multi secondary-btn btn-text-secondary">Vis alle<img class="arrow-icon" alt="Pil ikon til højre"
+            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
+        </button>
+    </div>
+    <?php
     echo '</div>';
 }
 
@@ -164,8 +176,7 @@ if (!$custom_query_upcoming->have_posts() && !$custom_query_past->have_posts()) 
 }
 
 function display_event_card() { ?>
-
-    <div class="membership-benefits-card event-card">
+<div class="membership-benefits-card event-card">
         <div class="benefits-icon-border event-card-border">
             <div class="benefits-icon-bg">
 
