@@ -11,6 +11,7 @@
         'rewrite' => array('slug' => 'aska_kalender'), // Custom permalink structure
         'menu_icon' => 'dashicons-calendar', // Icon for the admin menu (use dashicons classes)
         'taxonomies' => array( 'category' ),
+        'supports' => array('title')
     );
 
     register_post_type('kalender', $args);
