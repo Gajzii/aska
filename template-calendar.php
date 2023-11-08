@@ -13,132 +13,129 @@
 <!-- -------------------- Filter functions -------------- -->
 <!-- ------------------- Category checkboxes ------------ -->
 <?php
-$selected_categories = array();
+    $selected_categories = array();
 
-if (isset($_GET['category'])) {
-    $selected_categories = (array)$_GET['category'];
-}
+    if (isset($_GET['category'])) {
+        $selected_categories = (array)$_GET['category'];
+    }
 
-$current_date = date('Y-m-d');
-$args_upcoming = array(
-    'post_type' => 'kalender',
-    'posts_per_page' => -1,
-    'meta_key' => 'calendar-date',
-    'orderby' => 'meta_value',
-    'order' => 'ASC', // Display upcoming events first
-    'meta_query' => array(
-        array(
-            'key' => 'calendar-date',
-            'value' => $current_date,
-            'compare' => '>=',
-            'type' => 'DATE',
-        ),
-    ),
-);
-
-$args_past = array(
-    'post_type' => 'kalender',
-    'posts_per_page' => -1,
-    'meta_key' => 'calendar-date',
-    'orderby' => 'meta_value',
-    'order' => 'DESC', // Display past events first
-    'meta_query' => array(
-        array(
-            'key' => 'calendar-date',
-            'value' => $current_date,
-            'compare' => '<',
-            'type' => 'DATE',
-        ),
-    ),
-);
-
-if (!empty($selected_categories)) {
-    $args_upcoming['tax_query'] = array(
-        array(
-            'taxonomy' => 'category',
-            'field'    => 'slug',
-            'terms'    => $selected_categories,
+    $current_date = date('Y-m-d');
+    $args_upcoming = array(
+        'post_type' => 'kalender',
+        'posts_per_page' => -1,
+        'meta_key' => 'calendar-date',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+        'meta_query' => array(
+            array(
+                'key' => 'calendar-date',
+                'value' => $current_date,
+                'compare' => '>=',
+                'type' => 'DATE',
+            ),
         ),
     );
 
-    $args_past['tax_query'] = array(
-        array(
-            'taxonomy' => 'category',
-            'field'    => 'slug',
-            'terms'    => $selected_categories,
+    $args_past = array(
+        'post_type' => 'kalender',
+        'posts_per_page' => -1,
+        'meta_key' => 'calendar-date',
+        'orderby' => 'meta_value',
+        'order' => 'DESC',
+        'meta_query' => array(
+            array(
+                'key' => 'calendar-date',
+                'value' => $current_date,
+                'compare' => '<',
+                'type' => 'DATE',
+            ),
         ),
     );
-}
 
-// ------------------- Event search ----------------------- //
-if (isset($_GET['event_search'])) {
-    $search_term = sanitize_text_field($_GET['event_search']);
-    $args_upcoming['s'] = $search_term;
-    $args_past['s'] = $search_term;
-}
+    if (!empty($selected_categories)) {
+        $args_upcoming['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => $selected_categories,
+            ),
+        );
 
-// ------------------- Category checkboxes UI ------------- //
-$custom_query_upcoming = new WP_Query($args_upcoming);
-$custom_query_past = new WP_Query($args_past);
+        $args_past['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => $selected_categories,
+            ),
+        );
+    }
 
-$categories = get_terms(array(
-    'taxonomy' => 'category',
-    'hide_empty' => false,
-));
-$categories = array_filter($categories, function ($category) {
-    $hidden_category_ids = array(10);
-    return !in_array($category->term_id, $hidden_category_ids);
-});
+    // ------------------- Event search ----------------------- //
+    if (isset($_GET['event_search'])) {
+        $search_term = sanitize_text_field($_GET['event_search']);
+        $args_upcoming['s'] = $search_term;
+        $args_past['s'] = $search_term;
+    }
+
+    $custom_query_upcoming = new WP_Query($args_upcoming);
+    $custom_query_past = new WP_Query($args_past);
+
+    $categories = get_terms(array(
+        'taxonomy' => 'category',
+        'hide_empty' => false,
+    ));
+    $categories = array_filter($categories, function ($category) {
+        $hidden_category_ids = array(10);
+        return !in_array($category->term_id, $hidden_category_ids);
+    });
 ?>
+<!-- ------------------- Category checkboxes UI ------------- -->
+<div class="calendar-filter-section">
+    <form class="calendar-select-form" method="get" action="<?= esc_url(get_permalink()) ?>">
+        <div class="calendar-select-section">
 
-<div class="calendar-select-section">
-    <div class="">
-        <form class="calendar-select-form" method="get" action="<?= esc_url(get_permalink()) ?>">
-            <div class="calendar-select-section-inner">
-                <?php foreach ($categories as $category) {
-                    echo '<label class="calendar-event-checkbox">';
-                    echo '<input type="checkbox" name="category[]" value="' . $category->slug . '"';
-                    if (in_array($category->slug, $selected_categories)) {
-                        echo ' checked';
-                    }
-                    echo '>';
-                    echo $category->name;
-                    echo '</label>';
+            <?php foreach ($categories as $category) {
+                echo '<label class="calendar-select-checkbox">';
+                echo '<input type="checkbox" name="category[]" value="' . $category->slug . '"';
+                if (in_array($category->slug, $selected_categories)) {
+                    echo ' checked';
                 }
-                ?>
-            </div>
-            <div class="event-btn-container">
-                <div class="event-btn-container-inner">
-                    <input type="submit" value="" class="secondary-btn-border filter-btn">
-                    <button class="filter-btn-inner readMore_multi secondary-btn btn-text-secondary">Filtrér valgte<img class="arrow-icon" alt="Pil ikon til højre"
-                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
-                    </button>
-                    </input>
-                    <a href="<?= esc_url(get_permalink()) ?>" class="calendar-clear-checkboxes">Nulstil filtrering</a>
-                </div>
-            </div>
-        </form>
-    </div>
+                echo '>';
+                echo $category->name;
+                echo '</label>';
+            } ?>
+            
+        </div>
+        <div class="select-btn-container">
+            <input type="submit" value="" class="secondary-btn-border filter-btn">
+            <button class="filter-btn-inner readMore_multi secondary-btn btn-text-secondary">Filtrér valgte<img class="arrow-icon" alt="Pil ikon til højre" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" /></button>
+        </div>
+    </form>
+     <a href="<?= esc_url(get_permalink()) ?>" class="calendar-clear">Nulstil filtrering</a>
 </div>
 
 <!-- ------------------- Event search UI ------------------ -->
-<div class="calendar-search-section">
-    <form class="calendar-search-form" method="get" action="<?= esc_url(get_permalink()) ?>">
-        <input type="text" class="calendar-search-input" name="event_search" placeholder="Søg efter begivenhed" value="<?php echo isset($_GET['event_search']) ? esc_attr($_GET['event_search']) : ''; ?>">
-        <div class="search-btn-container">
-            <input type="submit" value="" class="search-btn-border"></input>
-            <button class="search-btn">
-                <img class="search-icon" alt="Søge ikon"
-                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/search-icon.svg" />
-            </button>
-        </div>
-    </form>
-    <a href="<?= esc_url(get_permalink()) ?>" class="calendar-clear-search">Nulstil søgning</a>
+<div class="calendar-filter-section-secondary">
+    <div class="calendar-search-section">
+        <form class="calendar-search-form" method="get" action="<?= esc_url(get_permalink()) ?>">
+            <input type="text" class="calendar-search-input" name="event_search" placeholder="Søg efter begivenhed" value="<?php echo isset($_GET['event_search']) ? esc_attr($_GET['event_search']) : ''; ?>">
+            <div class="search-btn-container">
+                <input type="submit" value="" class="search-btn-border"></input>
+                <button class="search-btn">
+                    <img class="search-icon" alt="Søge ikon"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/search-icon.svg" />
+                </button>
+            </div>
+        </form>
+    </div>
+    <a href="<?= esc_url(get_permalink()) ?>" class="calendar-clear-secondary">Nulstil søgning</a>
+</div>
+<div class="page-margin">
+    <div class="secondary-gradient-border"></div>
 </div>
 
-<!-- ---------------------- Event Cards --------------------- -->
+<!-- ------------- Event Cards Upcoming Section ------------- -->
 <?php
-
 if ($custom_query_upcoming->have_posts()) {
     echo '<h2 class="calendar-header">Kommende begivenheder</h2>';
     echo '<div class="page-margin event-cards-container upcoming-container">';
@@ -149,11 +146,11 @@ if ($custom_query_upcoming->have_posts()) {
     }
     echo '</div>';
 }
-
+// ----------------- Event Cards Past Section ---------------- //
 if ($custom_query_past->have_posts()) {
     echo '<div class="past-container">';
     echo '<h2 class="calendar-header">Afviklede begivenheder</h2>';
-    echo '<div class="page-margin event-cards-container" id="event-cards-container-past">';
+    echo '<div class="page-margin event-cards-container">';
     while ($custom_query_past->have_posts()) {
         $custom_query_past->the_post();?>
         <div class="past-event-card">
@@ -175,6 +172,7 @@ if (!$custom_query_upcoming->have_posts() && !$custom_query_past->have_posts()) 
     echo 'Der er ingen begivenheder i denne kategori.';
 }
 
+// ---------------------- Event Cards --------------------- //
 function display_event_card() { ?>
 <div class="membership-benefits-card event-card">
         <div class="benefits-icon-border event-card-border">
