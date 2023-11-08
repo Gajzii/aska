@@ -112,8 +112,8 @@
     <?php $page_cards_management_text = get_field('page_cards_management_text'); ?>
 
     <div class="modal modal_multi">
-        <div class="modal-flex">
-            <div class="page-modal-content">
+        <div class="modal-flex modal-flex-management">
+            <div class="page-modal-content page-modal-content-management">
                 <div class="modal-padding">
                     <span class="close_multi">
                         <img class="close-icon" alt="Luk modal ikon"
@@ -128,31 +128,32 @@
                                 <?php if (have_rows('management')) : ?>
                                 <?php while (have_rows('management')) : the_row(); ?>
                                 <?php
-                            $management_img = get_sub_field('management_img');
-                            $management_role = get_sub_field('management_role');
-                            $management_name = get_sub_field('management_name');
-                            $management_mail = get_sub_field('management_mail');
-                            $management_responsibility = get_sub_field('management_responsibility');
-                            ?>
-                                <img class="modal-management-img" src="<?php echo $management_img['url']; ?>" />
-                                <div class="management-member">
-                                    <h5><?= $management_role ?></h5>
-                                    <p><?= $management_name ?></p>
+                                    $management_img = get_sub_field('management_img');
+                                    $management_role = get_sub_field('management_role');
+                                    $management_name = get_sub_field('management_name');
+                                    $management_mail = get_sub_field('management_mail');
+                                    $management_responsibility = get_sub_field('management_responsibility');
+                                ?>
+                                <div class="management-member-flex">
+                                    <img class="modal-management-img" src="<?php echo $management_img['url']; ?>" />
+                                    <div class="management-member">
+                                        <h5><?= $management_role ?></h5>
+                                        <p><?= $management_name ?></p>
 
-                                    <div class="management-mail">
-                                        <a target=_blank href="mailto:<?= $management_mail ?>">
-                                            <img class="mail-icon" alt="email ikon"
-                                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/mail-icon.svg" />
+                                        <div class="management-mail">
+                                            <a target=_blank href="mailto:<?= $management_mail ?>">
+                                                <?= $management_mail ?>
+                                                <img class="mail-icon" alt="email ikon"
+                                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/mail-icon.svg" />
 
-                                            <?= $management_mail ?></a>
+                                            </a>
+                                        </div>
+                                        <ul>
+                                            <?php foreach ($management_responsibility as $responsibility) : ?>
+                                            <li><?= $responsibility ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
                                     </div>
-
-
-                                    <ul>
-                                        <?php foreach ($management_responsibility as $responsibility) : ?>
-                                        <li><?= $responsibility ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
                                 </div>
                                 <?php endwhile; ?>
                                 <?php endif; ?>
