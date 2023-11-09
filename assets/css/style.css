@@ -519,11 +519,11 @@ h5 {
     padding: 0 16px;
   }
 
-  .top-menu li:nth-child(5) {
+  .top-menu li:nth-child(4) {
     margin-left: 65px;
   }
 
-  .top-menu li:nth-child(4) {
+  .top-menu li:nth-child(3) {
     margin-right: 65px;
   }
 }
@@ -568,11 +568,11 @@ h5 {
 }
 
 .change-header-height {
-  height: 488px !important;
+  height: 368px !important;
 }
 
 .change-logo {
-  top: 430px !important;
+  top: 310px !important;
 }
 
 .change .bar {
