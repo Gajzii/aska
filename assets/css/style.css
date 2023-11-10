@@ -76,14 +76,18 @@ body::-webkit-scrollbar-thumb:hover {
   --text-shadow: 1px 1px 5px rgb(0, 0, 0, 80%);
   --box-shadow: 0px 3px 8px 0px rgb(0, 0, 0, 40%);
   --box-opacity-secondary-green: rgb(86, 119, 107, 60%);
-  --primary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
-      rgb(84, 124, 85),
-      rgb(84, 124, 85),
-      rgba(240, 240, 240, 0.4));
-  --secondary-box-gradient-primary-green: -webkit-linear-gradient(0deg,
-      rgba(240, 240, 240, 0.4),
-      rgb(84, 124, 85),
-      rgba(240, 240, 240, 0.4));
+  --primary-box-gradient-primary-green: -webkit-linear-gradient(
+    0deg,
+    rgb(84, 124, 85),
+    rgb(84, 124, 85),
+    rgba(240, 240, 240, 0.4)
+  );
+  --secondary-box-gradient-primary-green: -webkit-linear-gradient(
+    0deg,
+    rgba(240, 240, 240, 0.4),
+    rgb(84, 124, 85),
+    rgba(240, 240, 240, 0.4)
+  );
   --text-hover-link: rgba(255, 255, 255, 0.6);
 
   --primary-darkgreen-hover: rgb(58 66 53);
@@ -129,7 +133,6 @@ a {
 }
 
 @media screen and (min-width: 951px) {
-
   a,
   p,
   ul {
@@ -761,7 +764,6 @@ footer {
 }
 
 @media (min-width: 951px) {
-
   .hero,
   .secondary-hero {
     background-size: 100%;
@@ -1401,7 +1403,6 @@ footer {
   display: none;
   position: fixed;
   z-index: 8;
-  padding-top: 12vh;
   left: 0;
   top: 0;
   width: 100%;
@@ -1481,7 +1482,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10vh;
 }
 
 @media screen and (min-width: 672px) and (max-width: 950px) {
@@ -1509,7 +1509,7 @@ footer {
 
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .modal-text {
-    width: 70%;
+    width: 80%;
   }
 }
 
@@ -1522,7 +1522,7 @@ footer {
 .modal-text-p {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 160px;
+  height: 40vh;
   margin: 0;
   padding-right: 5px;
 }
@@ -1531,9 +1531,15 @@ footer {
   margin: 0;
 }
 
+@media screen and (min-width: 672px) and (max-width: 950px) {
+  .modal-text-p {
+    height: 35vh;
+  }
+}
+
 @media screen and (min-width: 950px) {
   .modal-text-p {
-    height: 170px;
+    height: 30vh;
   }
 }
 
@@ -1613,13 +1619,15 @@ footer {
 .modal-img-overlay {
   max-width: 100%;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .modal-img-overlay::after {
   display: block;
   position: relative;
   background-image: linear-gradient(0deg, #56776b00 0, #56776b 90%, #56776b 100%);
-  height: 150px;
+  height: 144px;
   width: 100%;
   content: "";
   border-radius: 0 0 30px 0;
@@ -1634,7 +1642,7 @@ footer {
 .modal-img {
   max-width: 100%;
   width: 100%;
-  height: 144px;
+  height: 143px;
   border-radius: 0 0 30px 0;
   display: flex;
   flex-direction: column;
@@ -1671,7 +1679,11 @@ footer {
   background: var(--secondary-box-gradient-primary-green);
 }
 
-#instagram-gallery-modal-0 .instagram-gallery-modal .instagram-gallery-modal__body .instagram-gallery-modal__media-sidebar .instagram-gallery-modal__media_description {
+#instagram-gallery-modal-0
+  .instagram-gallery-modal
+  .instagram-gallery-modal__body
+  .instagram-gallery-modal__media-sidebar
+  .instagram-gallery-modal__media_description {
   color: var(--secondary-black);
 }
 
@@ -1718,7 +1730,6 @@ footer {
 
 /* ======================================================================== */
 /* ================================ CALENDAR ============================== */
-
 
 .calendar-filter-section,
 .calendar-filter-section-secondary {
@@ -1795,7 +1806,7 @@ footer {
 
 .select-btn-container {
   width: 170px;
-  height: 40px
+  height: 40px;
 }
 
 .filter-btn {
@@ -1950,7 +1961,6 @@ footer {
 }
 
 @media (min-width: 672px) {
-
   .past-event-card:nth-child(5),
   .past-event-card:nth-child(6) {
     display: none;
@@ -2113,11 +2123,11 @@ footer {
   text-transform: uppercase;
 }
 
-.page-card:hover>.page-card-heading>.page-card-details {
+.page-card:hover > .page-card-heading > .page-card-details {
   display: block;
 }
 
-.page-card:hover>.page-card-heading {
+.page-card:hover > .page-card-heading {
   width: 100%;
   height: 100%;
   backdrop-filter: grayscale(1) blur(2px);
@@ -2132,21 +2142,19 @@ footer {
   background-color: var(--secondary-green);
   margin: auto;
   width: 85%;
-  height: 405px;
+  height: 70vh;
   border-radius: 30px 0 30px 0;
   box-shadow: 0px 4px 3px 0px rgb(0, 0, 0, 25%);
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 950px) {
   .page-modal-content {
-    height: 463px;
-  }
-}
-
-@media screen and (min-width: 672px) and (max-width: 950px) {
-  .page-modal-content {
-    height: 420px;
+    height: 70vh;
+    width: 65%;
   }
 }
 
@@ -2175,21 +2183,9 @@ footer {
   }
 }
 
-.page-modal-content-management {
-  height: 450px;
-}
-
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .page-modal-content-management {
-    width: 100% !important;
-    height: 470px !important;
-  }
-}
-
-@media screen and (min-width: 951px) {
-  .page-modal-content-management {
-    width: 100% !important;
-    height: 500px !important;
+    width: 90% !important;
   }
 }
 
@@ -2221,7 +2217,7 @@ p {
 .modal-management-scroll {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 335px;
+  height: 55vh;
 }
 
 @media screen and (min-width: 672px) and (max-width: 950px) {
@@ -2232,7 +2228,7 @@ p {
 
 @media screen and (min-width: 950px) {
   .modal-management-scroll {
-    height: 360px;
+    height: 53vh;
   }
 }
 
