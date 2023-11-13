@@ -914,7 +914,7 @@ footer {
 
 @media screen and (min-width: 951px) {
   .cta-icon {
-    bottom: 220px;
+    bottom: 210px;
     width: 160px;
     height: 160px;
   }
@@ -2217,10 +2217,10 @@ footer {
   }
 }
 
-.modal-text-management h4,
+/* .modal-text-management h4,
 p {
   margin-left: 15px;
-}
+} */
 
 .modal-management-scroll {
   overflow-y: scroll;

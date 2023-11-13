@@ -11,7 +11,7 @@
     <div class="cta-card">
         <div class="cta-icon cta-icon-calendar"></div>
         <h3>Gå til kalender</h3>
-        <p class="cta-text">UFå et overblik over alle de spændende aktiviteter, som ASKA har planlagt i fremtiden.</p>
+        <p class="cta-text">Få et overblik over alle de spændende aktiviteter, som ASKA har planlagt i fremtiden.</p>
         <?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?>
     </div>
 
