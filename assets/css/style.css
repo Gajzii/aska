@@ -315,11 +315,13 @@ h5 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
 }
 
 @media (min-width: 672px) {
   .secondary-btn-border {
     width: 125px;
+    font-size: 14px;
   }
 }
 
