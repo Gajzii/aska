@@ -24,7 +24,7 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-</div> -->
+</div>
 
 
 <?php $committees_hero_img = get_field('committees_hero_img'); ?>
