@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 <?php $page_hero_img = get_field('page_hero_img'); ?>
 
 <!-- PAGE HERO -->
