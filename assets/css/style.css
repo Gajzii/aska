@@ -200,6 +200,13 @@ h5 {
   font-size: 16px;
 }
 
+.img-logo-credits,
+.img-logo-credits a {
+  font-size: 7px !important;
+  color: var(--primary-white);
+}
+
+
 /* -------------------------------- BUTTONS ------------------------------- */
 /* primary btn*/
 .primary-btn {
@@ -643,7 +650,7 @@ footer {
     grid-template-areas:
       "footer-address some-logos some-logos footer-mail"
       "footer-address some-logos some-logos footer-cvr";
-    padding: 40px 0;
+    /* padding: 40px 0; */
     text-align: right;
     width: 80%;
     height: 30px;
@@ -657,7 +664,7 @@ footer {
     grid-template-areas:
       "footer-address some-logos some-logos footer-mail"
       "footer-address some-logos some-logos footer-cvr";
-    padding: 50px 0;
+    /* padding: 50px 0; */
     text-align: right;
     width: 80%;
     height: 30px;
@@ -720,6 +727,13 @@ footer {
 
 .footer-credits p {
   font-size: 10px;
+}
+
+.footer-credits-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
 }
 
 .some-icon {

@@ -22,8 +22,13 @@
         </div>
     </div>
     <div class="footer-credits">
-        <p>©2023 ASKA ISLANDSHESTEKLUB</p>
-        <p>M.WENNERWALD OG C.NØRGAARD</p>
+        <div class="footer-credits-inner">
+            <p>©2023 ASKA ISLANDSHESTEKLUB</p>
+            <p>M.WENNERWALD OG C.NØRGAARD</p>
+        </div>
+        <div>
+            <p class="img-logo-credits">Icons by <a href="https://icons8.com/">Icons8</a> | Images by <a href="https://www.freepik.com/">Freepik</a></p>
+        </div>
     </div>
 </footer>
 
