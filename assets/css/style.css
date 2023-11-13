@@ -6,8 +6,8 @@ Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* Mobile first 
-// Tablet mediaquery: @media screen and (min-width: 672px) and (max-width: 950px) 
-// Desktop mediaqury: @media screen and (min-width: 951px) */
+// Tablet mediaquery: @media (min-width: 672px)
+// Desktop mediaqury: @media (min-width: 951px)
 /* ======================================================================== */
 /* ================================ GENERAL =============================== */
 
@@ -30,7 +30,7 @@ body {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .page-margin {
     width: 90%;
   }
@@ -122,13 +122,14 @@ a,
 p,
 ul {
   font-size: 12px;
+  line-height: 18px;
 }
 
 a {
   text-decoration: none;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
 
   a,
   p,
@@ -153,7 +154,7 @@ h1 {
   font-weight: 400;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   h1 {
     font-size: 45px;
   }
@@ -171,7 +172,7 @@ h4 {
   font-size: 15px;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   h4 {
     font-size: 17px;
   }
@@ -181,7 +182,7 @@ h5 {
   font-size: 11px;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   h5 {
     font-size: 14px;
   }
@@ -214,7 +215,7 @@ h5 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .primary-btn:hover {
     background-color: var(--primary-darkgreen-hover);
     transition: all 1s ease;
@@ -237,13 +238,13 @@ h5 {
   filter: var(--svg-primary-white);
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .arrow-icon {
     margin-right: 3px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .primary-btn:hover .arrow-icon {
     transform: translate(30%, 0);
     transition: all 1s ease;
@@ -270,19 +271,19 @@ h5 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .secondary-btn {
     width: 115px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .secondary-btn {
     width: 135px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .secondary-btn:hover {
     background-color: var(--primary-darkgreen-hover);
     transition: all 1s ease;
@@ -290,7 +291,7 @@ h5 {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .secondary-btn:hover .arrow-icon {
     transform: translate(30%, 0);
     transition: all 1s ease;
@@ -309,13 +310,13 @@ h5 {
   justify-content: center;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .secondary-btn-border {
     width: 125px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .secondary-btn-border {
     width: 145px;
   }
@@ -325,13 +326,13 @@ h5 {
   padding-left: 8px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .btn-text-secondary {
     padding-left: 12px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .btn-text-secondary {
     padding-left: 18px;
   }
@@ -351,7 +352,7 @@ h5 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .arrow-btn-border {
     width: 60px;
     height: 60px;
@@ -370,7 +371,7 @@ h5 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 950px) {
+@media (min-width: 951px) {
   .arow-btn:hover {
     background-color: var(--primary-white-hover);
     transition: all 1s ease;
@@ -427,7 +428,7 @@ h5 {
   transition: 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .logo {
     left: 50%;
     transform: translateX(-50%);
@@ -439,7 +440,7 @@ h5 {
   width: 30px;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   #dropdownmenu {
     display: none;
   }
@@ -455,7 +456,7 @@ h5 {
   transition: 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .header-inner {
     flex-direction: row;
     padding: 0;
@@ -467,7 +468,7 @@ h5 {
   background: var(--primary-box-gradient-primary-green);
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .gradient-border {
     background: var(--secondary-box-gradient-primary-green);
   }
@@ -490,7 +491,7 @@ h5 {
   transition: 0.2s ease-in-out;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .top-menu {
     position: relative;
     top: 0;
@@ -502,7 +503,7 @@ h5 {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .top-menu ul {
     display: flex;
     padding: 0;
@@ -514,7 +515,7 @@ h5 {
   padding: 16px 0;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .top-menu ul li {
     padding: 0 16px;
   }
@@ -542,7 +543,7 @@ h5 {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .top-menu li a:hover {
     color: var(--text-hover-link);
     cursor: pointer;
@@ -635,7 +636,7 @@ footer {
   align-items: center;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -649,7 +650,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -663,7 +664,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .footer-grid a:hover {
     color: var(--primary-white-hover);
     transition: all 1s ease;
@@ -677,7 +678,7 @@ footer {
   justify-content: center;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .footer-address {
     grid-area: footer-address;
     display: flex;
@@ -686,7 +687,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .footer-address {
     grid-area: footer-address;
     display: flex;
@@ -727,14 +728,13 @@ footer {
   filter: var(--svg-primary-white);
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .some-icon {
-    width: 45px;
     margin-top: 0;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .some-icon:hover {
     filter: var(--svg-primary-white-hover);
     transition: all 1s ease;
@@ -786,7 +786,7 @@ footer {
   width: 85%;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .hero-content {
     margin-top: 530px;
   }
@@ -800,7 +800,7 @@ footer {
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 672px) {
+@media (min-width: 672px) {
   .hero-text {
     width: 440px;
   }
@@ -840,13 +840,13 @@ footer {
   width: 90px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .hero-cta h3 {
     width: 100%;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .hero-cta h3 {
     width: 100%;
   }
@@ -857,14 +857,14 @@ footer {
   text-align: center;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .cta-text {
     display: block;
     width: 200px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .cta-text {
     display: block;
     width: 240px;
@@ -880,14 +880,14 @@ footer {
   gap: 20px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .cta-card {
     padding: 30px 0 20px 0;
     gap: 10px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .cta-card {
     padding: 40px 0 30px 0;
   }
@@ -904,7 +904,7 @@ footer {
   bottom: 140px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .cta-icon {
     bottom: 170px;
     width: 130px;
@@ -912,9 +912,9 @@ footer {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .cta-icon {
-    bottom: 210px;
+    bottom: 200px;
     width: 160px;
     height: 160px;
   }
@@ -926,13 +926,13 @@ footer {
   background-color: var(--primary-darkgreen);
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .cta-card-border {
     width: 2px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .cta-card-border {
     height: 130px;
     width: 2px;
@@ -957,7 +957,7 @@ footer {
   background-position-y: bottom;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .cta-icon-member {
     background-size: 50px;
   }
@@ -973,7 +973,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .cta-icon-member {
     background-size: 60px;
   }
@@ -1134,6 +1134,8 @@ footer {
   align-items: center;
   justify-content: center;
   grid-area: 14;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 950px) {
@@ -1151,9 +1153,13 @@ footer {
 /* ======================================================================== */
 /* ================================ MEMBERSHIP BENEFITS =================================== */
 .membership-benefits-text {
-  width: 60%;
+  /* width: 60%; */
   text-align: center;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .membership-benefits-section {
@@ -1168,7 +1174,7 @@ footer {
   margin: auto;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .membership-benefits-cards {
     width: 493px;
   }
@@ -1197,7 +1203,7 @@ footer {
   margin-right: 19px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .membership-benefits-card {
     margin-right: 20px;
   }
@@ -1359,7 +1365,7 @@ footer {
   height: 380px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .prev-next-btns {
     height: 400px;
   }
@@ -1425,7 +1431,7 @@ footer {
   position: relative;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-content {
     height: 420px;
     width: fit-content;
@@ -1443,7 +1449,7 @@ footer {
   transform: scale(1.4) translateY(19px);
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-discount {
     transform: scale(1.7) translateY(17px);
   }
@@ -1469,7 +1475,7 @@ footer {
   padding: 20px 20px 0 20px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-padding {
     padding: 30px 30px 0 30px;
   }
@@ -1488,7 +1494,7 @@ footer {
   padding-top: 10vh;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-flex {
     width: 65%;
     margin: auto;
@@ -1511,7 +1517,7 @@ footer {
   margin-top: 30px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-text {
     width: 70%;
   }
@@ -1535,7 +1541,7 @@ footer {
   margin: 0;
 }
 
-@media screen and (min-width: 950px) {
+@media (min-width: 951px) {
   .modal-text-p {
     height: 170px;
   }
@@ -1546,7 +1552,7 @@ footer {
   list-style: circle;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .modal-text-p a:hover {
     color: var(--primary-white-hover);
   }
@@ -1679,24 +1685,22 @@ footer {
   color: var(--secondary-black);
 }
 
-@media screen and (min-width: 950px) {
-  .instagram-gallery-list[data-feed_layout="gallery"] {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
+.instagram-gallery-list[data-feed_layout="gallery"] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
-  .instagram-gallery-item {
-    width: 100%;
-    display: none !important;
-  }
+.instagram-gallery-item {
+  width: 100%;
+  display: none !important;
+}
 
-  .instagram-gallery-item:nth-of-type(1),
-  .instagram-gallery-item:nth-of-type(2),
-  .instagram-gallery-item:nth-of-type(3),
-  .instagram-gallery-item:nth-of-type(4) {
-    display: block !important;
-  }
+.instagram-gallery-item:nth-of-type(1),
+.instagram-gallery-item:nth-of-type(2),
+.instagram-gallery-item:nth-of-type(3),
+.instagram-gallery-item:nth-of-type(4) {
+  display: block !important;
 }
 
 @media (min-width: 672px) {
@@ -2058,14 +2062,14 @@ footer {
   justify-content: space-between flex-start;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .page-cards-flex {
     justify-content: flex-start;
     gap: 15px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .page-cards-flex {
     justify-content: flex-start;
   }
@@ -2081,13 +2085,13 @@ footer {
   box-shadow: var(--box-shadow);
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .page-card {
     width: calc(33.33% - 10px);
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .page-card {
     width: calc(25% - 20px);
   }
@@ -2148,7 +2152,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .page-modal-content {
     height: 420px;
   }
@@ -2163,7 +2167,7 @@ footer {
   background-color: var(--secondary-green);
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .page-read-more-btn-secondary:hover {
     background-color: var(--secondary-green-hover);
     transition: all 1s ease;
@@ -2171,7 +2175,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .page-read-more-btn-secondary:hover .arrow-icon {
     transform: translate(30%, 0);
     transition: all 1s ease;
@@ -2183,21 +2187,21 @@ footer {
   height: 450px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .page-modal-content-management {
     width: 100% !important;
     height: 470px !important;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .page-modal-content-management {
     width: 100% !important;
     height: 500px !important;
   }
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-flex-management {
     width: 85%;
   }
@@ -2228,7 +2232,7 @@ p {
   height: 335px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .modal-management-scroll {
     height: 345px;
   }
@@ -2278,13 +2282,13 @@ p {
   margin: 30px 20px 10px 15px;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .management-modal-section {
     gap: 25px 40px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .management-modal-section {
     gap: 30px 40px;
     margin: 30px 20px 15px 15px;
@@ -2297,13 +2301,13 @@ p {
   box-shadow: var(--box-shadow);
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .management-member-flex {
     width: calc(50% - 20px);
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .management-member-flex {
     width: calc(50% - 20px);
   }
@@ -2321,7 +2325,7 @@ p {
   gap: 5px;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .management-member {
     margin: 15px 0 15px 10px;
   }
@@ -2336,13 +2340,13 @@ p {
   margin: 0;
 }
 
-@media screen and (min-width: 672px) and (max-width: 950px) {
+@media (min-width: 672px) {
   .management-member p {
     font-size: 18px;
   }
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .management-member p {
     font-size: 18px;
   }
@@ -2359,7 +2363,7 @@ p {
   font-weight: 100;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .management-member a:hover {
     color: var(--primary-white-hover);
   }
@@ -2378,7 +2382,7 @@ p {
   margin: 0 3px;
 }
 
-@media screen and (min-width: 951px) {
+@media (min-width: 951px) {
   .management-member a:hover .mail-icon {
     opacity: 1;
     transition: 0.5s ease-in-out;
