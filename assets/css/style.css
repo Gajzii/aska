@@ -272,7 +272,7 @@ h5 {
   flex-direction: row;
   height: 30px;
   align-items: center;
-  width: 105px;
+  width: 115px;
   justify-content: space-between;
   border: 1px solid var(--primary-white);
   cursor: pointer;
@@ -310,7 +310,7 @@ h5 {
   background-color: var(--primary-darkgreen);
   border-radius: 30px;
   height: 40px;
-  width: 115px;
+  width: 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
