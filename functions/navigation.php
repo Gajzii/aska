@@ -11,3 +11,4 @@ register_nav_menus(
 );
 }
 add_action('init', 'menus');
+?>

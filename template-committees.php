@@ -7,7 +7,7 @@
 
     <?php
     $committee_pages = get_pages(array(
-        'child_of' => 176, // ID of the parent page
+        'child_of' => 176,
         'sort_column' => 'post_title',
     ));
 ?>

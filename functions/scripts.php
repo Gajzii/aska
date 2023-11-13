@@ -29,4 +29,4 @@ function enqueue_script() {
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_script' );
-
+?>
