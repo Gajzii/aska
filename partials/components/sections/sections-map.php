@@ -12,7 +12,7 @@
                 <p>Aska hører hjemme på</p>
                 <p>Det Nationale Hestesportscenter Vilhelmsborg
                     <br>Bedervej 101, 8320 Mårslet</p>
-                <img class="vilhelmsborg" alt="Vilhelmsborg Hestesportscenter logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/vilhelmsborg.png" />
+                <img class="vilhelmsborg" alt="Vilhelmsborg Hestesportscenter logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/vblogo.svg" />
             </div>
         </div>
     </div>

@@ -901,12 +901,12 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  bottom: 143px;
+  bottom: 140px;
 }
 
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .cta-icon {
-    bottom: 188px;
+    bottom: 170px;
     width: 130px;
     height: 130px;
   }
@@ -914,7 +914,7 @@ footer {
 
 @media screen and (min-width: 951px) {
   .cta-icon {
-    bottom: 239px;
+    bottom: 220px;
     width: 160px;
     height: 160px;
   }
@@ -1142,6 +1142,10 @@ footer {
     max-width: 520px;
     grid-area: 1/16;
   }
+}
+
+.vilhelmsborg {
+  width: 200px;
 }
 
 /* ======================================================================== */
