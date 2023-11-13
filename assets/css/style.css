@@ -746,17 +746,18 @@ footer {
 .hero,
 .secondary-hero {
   width: 100%;
-  height: 1000px;
+  height: 835px;
   background-image: url(../media/hero-img.jpg);
-  background-size: 1000px;
+  background-size: 850px;
   background-repeat: no-repeat;
   background-position-x: 45%;
-  background-position-y: 80%;
+  background-position-y: 70%;
 }
 
-@media (min-width: 951px) {
+@media (min-width: 672px) {
   .hero {
-    height: 96vh;
+    background-position-y: 45%;
+    background-size: 1200px;
   }
 }
 
@@ -765,8 +766,7 @@ footer {
   .hero,
   .secondary-hero {
     background-size: 100%;
-    background-position-y: 50%;
-    height: 96vh;
+    height: 850px;
   }
 }
 
@@ -779,7 +779,7 @@ footer {
 
 .hero-content {
   position: absolute;
-  margin-top: 580px;
+  margin-top: 530px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -788,7 +788,7 @@ footer {
 
 @media screen and (min-width: 951px) {
   .hero-content {
-    margin-top: 50vh;
+    margin-top: 530px;
   }
 }
 
@@ -800,7 +800,7 @@ footer {
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 951px) {
+@media screen and (min-width: 672px) {
   .hero-text {
     width: 440px;
   }
