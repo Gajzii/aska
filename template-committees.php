@@ -13,7 +13,6 @@
 ?>
 
 <?php if (!empty($committee_pages)) : ?>
-<h3>My Page List :</h3>
 <?php foreach ($committee_pages as $page) : ?>
 <?php 
             $page_title = get_the_title($page);
@@ -73,6 +72,5 @@
 
     </div>
 </div>
-
 
 <?php get_footer(); ?>
