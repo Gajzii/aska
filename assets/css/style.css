@@ -759,8 +759,7 @@ footer {
 
 /* ======================================================================== */
 /* ================================ HERO ================================== */
-/* .hero,
-.secondary-hero {
+.hero {
   width: 100%;
   height: 835px;
   background-image: url(../media/hero-img.jpg);
@@ -768,7 +767,7 @@ footer {
   background-repeat: no-repeat;
   background-position-x: 45%;
   background-position-y: 70%;
-} */
+}
 
 @media (min-width: 672px) {
   .hero {
@@ -778,22 +777,11 @@ footer {
 }
 
 @media (min-width: 951px) {
-
-  .hero
-
-  /* .secondary-hero  */
-    {
+  .hero {
     background-size: 100%;
     height: 850px;
   }
 }
-
-/* .secondary-hero {
-  height: 300px;
-  background-position-y: 33.5%;
-  background-image: url(../media/calendar-img.jpg);
-  position: relative;
-} */
 
 .hero-content {
   position: absolute;
