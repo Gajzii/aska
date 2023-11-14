@@ -2212,10 +2212,6 @@ footer {
   }
 }
 
-/* .page-modal-content-management {
-  height: 450px;
-} */
-
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .page-modal-content-management {
     width: 90% !important;
@@ -2241,11 +2237,6 @@ footer {
     width: 100%;
   }
 }
-
-/* .modal-text-management h4,
-p {
-  margin-left: 15px;
-} */
 
 .modal-management-scroll {
   overflow-y: scroll;
