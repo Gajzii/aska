@@ -29,7 +29,7 @@
         <?php foreach ($committee_pages as $page) : ?>
         <?php 
             $page_title = get_the_title($page);
-            $page_url = basename(get_permalink($page));
+            $page_url = get_permalink($page);
             $page_img = get_field('page_hero_img', $page);
         ?>
 
@@ -41,7 +41,7 @@
                 </h4>
                 <div class="page-card-details">
                     <br>
-                    <a href="href=<?= $page_url; ?>" class="secondary-btn-border page-read-more-btn">
+                    <a href="<?= $page_url; ?>" class="secondary-btn-border page-read-more-btn">
                         <button class="readMore_multi secondary-btn btn-text-secondary page-read-more-btn-secondary">
                             Læs mere
                             <img class="arrow-icon" alt="Pil ikon til højre"
