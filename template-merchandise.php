@@ -42,10 +42,9 @@
                 <?php foreach( $merch_imgs as $image ): ?>
                 <li class="merch-img-bg">
                     <a target="_blank" href="<?php echo esc_url($image['url']); ?>">
-                        <img class="merch-img" src="<?php echo esc_url($image['sizes']['thumbnail']); ?>"
+                        <img class="merch-img" src="<?php echo $image['url']; ?> ; ?>"
                             alt="<?php echo esc_attr($image['alt']); ?>" />
                     </a>
-                    <p><?php echo esc_html($image['caption']); ?></p>
                 </li>
                 <?php endforeach; ?>
             </ul>
