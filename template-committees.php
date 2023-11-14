@@ -5,11 +5,9 @@
 
 <?php get_header(); ?>
 
-<!-- <div style="padding-top:100px;color:black !important;">
-
     <?php
     $committee_pages = get_pages(array(
-        'child_of' => 176, // ID of the parent page
+        'child_of' => 23,
         'sort_column' => 'post_title',
     ));
 ?>
@@ -26,7 +24,7 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-</div> -->
+</div>
 
 
 <?php $committees_hero_img = get_field('committees_hero_img'); ?>

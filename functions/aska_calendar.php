@@ -17,3 +17,4 @@
     register_post_type('kalender', $args);
 }
 add_action('init', 'custom_post_type');
+?>
