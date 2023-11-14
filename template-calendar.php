@@ -6,8 +6,12 @@
 
 <?php get_header();?>
 
-<div class="secondary-hero">
-    <h1 class="secondary-hero-content">Kalender</h1>
+<?php $page_hero_img = get_field('page_hero_img'); ?>
+
+<!-- PAGE HERO -->
+<div class="page-hero-container">
+    <img class="page-hero" src="<?php echo $page_hero_img['url']; ?>" />
+    <h1 class="page-hero-content"><?= get_the_title(); ?></h1>
 </div>
 
 <!-- -------------------- Filter functions -------------- -->
