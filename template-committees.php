@@ -29,7 +29,7 @@
         <?php foreach ($committee_pages as $page) : ?>
         <?php 
             $page_title = get_the_title($page);
-            $page_url = get_permalink($page);
+            $page_url = basename(get_permalink($page));
             $page_img = get_field('page_hero_img', $page);
         ?>
 
