@@ -1,4 +1,4 @@
-<footer id="footer-contact">
+<footer>
 
     <div class="footer-grid">
         <div class="footer-address">
@@ -21,7 +21,7 @@
                     src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/instagram-logo.svg" /></a>
         </div>
     </div>
-    <div class="footer-credits">
+    <div class="footer-credits" id="footer-contact">
         <div class="footer-credits-inner">
             <p>©2023 ASKA ISLANDSHESTEKLUB</p>
             <p>M.WENNERWALD OG C.NØRGAARD</p>
