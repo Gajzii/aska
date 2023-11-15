@@ -17,7 +17,6 @@
     <div class="page-cards-flex">
 
         <!-- PAGE CARD CONTENT -->
-        
         <?php
             $committee_pages = get_pages(array(
                 'child_of' => 23,
@@ -33,8 +32,7 @@
             $page_img = get_field('page_hero_img', $page);
         ?>
 
-        <div class="page-card" ontouchmove=""
-            style="background-image: url('<?= $page_img['url']; ?>');">
+        <div class="page-card" ontouchmove="" style="background-image: url('<?= $page_img['url']; ?>');">
             <div class="page-card-heading" ontouchmove="">
                 <h4>
                     <?= $page_title; ?>
@@ -55,11 +53,8 @@
         <?php endforeach; ?>
         <?php endif; ?>
 
-        </div>
-
-       
-
     </div>
+</div>
 </div>
 
 <?php get_footer(); ?>

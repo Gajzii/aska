@@ -14,7 +14,7 @@
     <h1 class="page-hero-content"><?= get_the_title(); ?></h1>
 </div>
 
-<div class="page-margin">
+<div class="page-margin page-height">
     <div class="page-cards-flex">
 
         <!-- PAGE CARD CONTENT -->
@@ -51,7 +51,6 @@
         <?php endif; ?>
 
         <!-- MANAGEMENT CARD -->
-
         <?php $page_cards_management_heading = get_field('page_cards_management_heading'); ?>
         <?php $page_cards_management_bg_img = get_field('page_cards_management_bg_img'); ?>
         <?php $page_cards_management_description = get_field('page_cards_management_description'); ?>
@@ -78,7 +77,6 @@
             </div>
         </div>
     </div>
-
 
 
     <!-- MODAL -->
@@ -151,8 +149,6 @@
     endwhile;
     ?>
     <?php endif; ?>
-
-
 
 
     <!-- MANAGEMENT MODAL -->

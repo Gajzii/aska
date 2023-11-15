@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer-contact">
 
     <div class="footer-grid">
         <div class="footer-address">
@@ -27,7 +27,8 @@
             <p>M.WENNERWALD OG C.NØRGAARD</p>
         </div>
         <div>
-            <p class="img-logo-credits">Icons by <a href="https://icons8.com/">Icons8</a> | Images by <a href="https://www.freepik.com/">Freepik</a></p>
+            <p class="img-logo-credits">Icons by <a href="https://icons8.com/">Icons8</a> | Images by <a
+                    href="https://www.freepik.com/">Freepik</a></p>
         </div>
     </div>
 </footer>

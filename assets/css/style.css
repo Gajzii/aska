@@ -17,7 +17,9 @@ Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald
 
 body {
   background: var(--secondary-white);
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-margin {
@@ -482,6 +484,11 @@ h5 {
   }
 }
 
+.active {
+  font-weight: 500 !important;
+  color: rgb(169 169 169) !important;
+}
+
 /* ------------------------- DROPDOWN MENU ------------------------------- */
 .menu {
   padding: 0 7.5%;
@@ -623,6 +630,7 @@ h5 {
 /* ================================ FOOTER ================================ */
 footer {
   background-color: var(--secondary-green);
+  margin-top: auto;
 }
 
 .footer-grid {
@@ -652,7 +660,6 @@ footer {
     grid-template-areas:
       "footer-address some-logos some-logos footer-mail"
       "footer-address some-logos some-logos footer-cvr";
-    /* padding: 40px 0; */
     text-align: right;
     width: 80%;
     height: 30px;
@@ -666,7 +673,6 @@ footer {
     grid-template-areas:
       "footer-address some-logos some-logos footer-mail"
       "footer-address some-logos some-logos footer-cvr";
-    /* padding: 50px 0; */
     text-align: right;
     width: 80%;
     height: 30px;
@@ -762,11 +768,28 @@ footer {
 .hero {
   width: 100%;
   height: 835px;
-  background-image: url(../media/hero-img.jpg);
   background-size: 850px;
   background-repeat: no-repeat;
   background-position-x: 45%;
   background-position-y: 70%;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../media/hero-img.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+  z-index: -1;
 }
 
 @media (min-width: 672px) {
@@ -1125,11 +1148,21 @@ footer {
   background-color: var(--primary-white);
   gap: 10px;
   border-radius: 30px 0 30px 0;
+  cursor: default;
 }
 
 .map-text p {
   color: var(--secondary-black);
   text-align: center;
+}
+
+.map-address {
+  color: var(--secondary-black);
+  cursor: pointer;
+}
+
+.map-address:hover {
+  color: var(--primary-black);
 }
 
 .map-text-border {
@@ -1161,7 +1194,6 @@ footer {
 /* ======================================================================== */
 /* ================================ MEMBERSHIP BENEFITS =================================== */
 .membership-benefits-text {
-  /* width: 60%; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1415,6 +1447,33 @@ footer {
   }
 }
 
+.membership-modal-flex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.membership-modal-text-p {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 18vh;
+  margin: 0;
+  padding-right: 5px;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+  .membership-modal-text-p {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 951px) {
+  .membership-modal-text-p {
+    height: 22vh;
+  }
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -1512,7 +1571,28 @@ footer {
     width: 60%;
     max-width: 675px;
     margin: auto;
-    /* padding-top: 8vh; */
+  }
+}
+
+.membership-modal-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 672px) {
+  .membership-modal-flex {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .membership-modal-flex {
+    width: 100%;
+    max-width: 675px;
+    margin: auto;
   }
 }
 
@@ -1913,7 +1993,7 @@ footer {
   font-size: 12px;
   text-transform: uppercase;
   text-decoration: underline;
-  color: var(--primary-white);
+  color: var(--primary-white) !important;
   cursor: pointer;
 }
 
@@ -2096,6 +2176,7 @@ footer {
   height: 220px;
   position: relative;
   box-shadow: var(--box-shadow);
+  border-radius: 4px;
 }
 
 @media (min-width: 672px) {
@@ -2128,6 +2209,7 @@ footer {
   overflow: hidden;
   text-align: center;
   backdrop-filter: blur(2px);
+  border-radius: 0 0 4px 4px;
 }
 
 .page-card-heading h4 {
@@ -2142,11 +2224,13 @@ footer {
   width: 100%;
   height: 100%;
   backdrop-filter: grayscale(1) blur(2px);
+  border-radius: 4px;
 }
 
 .page-card-description {
   text-align: center;
   padding: 15px 5%;
+  cursor: default;
 }
 
 .page-modal-content {

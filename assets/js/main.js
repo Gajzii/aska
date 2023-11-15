@@ -1,14 +1,28 @@
 // ------------------ BURGER MENU ------------------
 function onClickMenu() {
-  document.getElementById("dropdownmenu").classList.toggle("change");
+  var body = document.querySelector("body");
+  var dropdownMenu = document.getElementById("dropdownmenu");
+  dropdownMenu.classList.toggle("change");
   document.querySelector(".top-menu").classList.toggle("change");
-  document
-    .querySelector(".header-background")
-    .classList.toggle("change-header-height");
-  document
-    .querySelector(".header-inner")
-    .classList.toggle("change-header-height");
+  document.querySelector(".header-background").classList.toggle("change-header-height");
+  document.querySelector(".header-inner").classList.toggle("change-header-height");
   document.querySelector(".logo").classList.toggle("change-logo");
+
+  // If dropdown-menu has class 'change', prevent scrolling
+  if (dropdownMenu.classList.contains("change")) {
+    body.style.overflow = "hidden"; // Låser scrolling
+  } else {
+    body.style.overflow = ""; // Oplåser scrolling
+  }
+}
+
+// ADD CLASS TO ACTIVE MENU ITEM
+var menuLinks = document.querySelectorAll(".top-menu a");
+
+for (var i = 0; i < menuLinks.length; i++) {
+  if (menuLinks[i].href === document.URL) {
+    menuLinks[i].classList.add("active");
+  }
 }
 
 // ------------------ SHOW ALL PAST EVENT CARDS ------------------
@@ -23,12 +37,12 @@ function showAllPastEvents() {
 }
 
 // ------------------ MEMBERSHIP BENEFITS SLIDER ------------------
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".cards-container");
-  const cards = document.querySelectorAll(".membership-benefits-card");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
+const slider = document.querySelector(".cards-container");
+const cards = document.querySelectorAll(".membership-benefits-card");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
 
+if (slider) {
   let isDragging = false;
   let startPosition = 0;
   let currentTranslate = 0;
@@ -37,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let cardWidth;
 
   function setCardWidth() {
-    cardWidth =
-      cards[0].offsetWidth +
-      parseInt(window.getComputedStyle(cards[0]).marginRight);
+    cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
   }
 
   setCardWidth();
@@ -74,9 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function drag(e) {
     if (!isDragging) return;
-    const currentPosition = e.type.includes("mouse")
-      ? e.pageX
-      : e.touches[0].clientX;
+    const currentPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
     const diff = currentPosition - startPosition;
     currentTranslate = prevTranslate + diff;
     updateSliderPosition();
@@ -107,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateSliderPosition();
-});
+}
 
 //MODAL
 var modalparent = document.getElementsByClassName("modal_multi");
