@@ -2,13 +2,18 @@
 function onClickMenu() {
   document.getElementById("dropdownmenu").classList.toggle("change");
   document.querySelector(".top-menu").classList.toggle("change");
-  document
-    .querySelector(".header-background")
-    .classList.toggle("change-header-height");
-  document
-    .querySelector(".header-inner")
-    .classList.toggle("change-header-height");
+  document.querySelector(".header-background").classList.toggle("change-header-height");
+  document.querySelector(".header-inner").classList.toggle("change-header-height");
   document.querySelector(".logo").classList.toggle("change-logo");
+}
+
+// ADD CLASS TO ACTIVE MENU ITEM
+var menuLinks = document.querySelectorAll(".top-menu a");
+
+for (var i = 0; i < menuLinks.length; i++) {
+  if (menuLinks[i].href === document.URL) {
+    menuLinks[i].classList.add("active");
+  }
 }
 
 // ------------------ SHOW ALL PAST EVENT CARDS ------------------
@@ -37,9 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let cardWidth;
 
   function setCardWidth() {
-    cardWidth =
-      cards[0].offsetWidth +
-      parseInt(window.getComputedStyle(cards[0]).marginRight);
+    cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
   }
 
   setCardWidth();
@@ -74,9 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function drag(e) {
     if (!isDragging) return;
-    const currentPosition = e.type.includes("mouse")
-      ? e.pageX
-      : e.touches[0].clientX;
+    const currentPosition = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
     const diff = currentPosition - startPosition;
     currentTranslate = prevTranslate + diff;
     updateSliderPosition();
