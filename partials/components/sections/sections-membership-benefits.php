@@ -76,30 +76,32 @@
 
 
 <div class="modal modal_multi">
-    <div class="modal-flex">
+    <div class="membership-modal-flex">
+        <div class="membership-modal-flex">
 
-        <div class="benefits-icon-border modal-discount">
-            <div class="benefits-icon-bg">
-                <h3><?= $membership_benefits_discount?>%</h3>
-            </div>
-        </div>
-
-        <div class="modal-content">
-            <div class="modal-padding">
-                <span class="close_multi">
-                    <img class="close-icon" alt="Luk modal ikon"
-                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
-                </span>
-                <div class="modal-text">
-                    <h4><?= $membership_benefits_heading?></h4>
-                    <p><?= $membership_benefits_description?></p>
+            <div class="benefits-icon-border modal-discount">
+                <div class="benefits-icon-bg">
+                    <h3><?= $membership_benefits_discount?>%</h3>
                 </div>
             </div>
-            <div class="modal-img-overlay">
-                <img class="modal-img" src="<?php echo $membership_benefits_img['url']; ?>" />
-            </div>
-        </div>
 
+            <div class="modal-content">
+                <div class="modal-padding">
+                    <span class="close_multi">
+                        <img class="close-icon" alt="Luk modal ikon"
+                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
+                    </span>
+                    <div class="modal-text">
+                        <h4><?= $membership_benefits_heading?></h4>
+                        <p class="membership-modal-text-p"><?= $membership_benefits_description?></p>
+                    </div>
+                </div>
+                <div class="modal-img-overlay">
+                    <img class="modal-img" src="<?php echo $membership_benefits_img['url']; ?>" />
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 <?php endwhile; ?>

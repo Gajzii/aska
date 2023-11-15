@@ -14,7 +14,7 @@
     <h1 class="page-hero-content"><?= get_the_title(); ?></h1>
 </div>
 
-<div class="page-margin">
+<div class="page-margin page-height">
     <div class="page-cards-flex">
 
         <!-- PAGE CARD CONTENT -->

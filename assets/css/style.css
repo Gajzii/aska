@@ -17,7 +17,9 @@ Author: Noerwald v/ Camilla Nørgaard og Maja Wennwewald
 
 body {
   background: var(--secondary-white);
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-margin {
@@ -39,6 +41,10 @@ body {
     max-width: 1317px;
   }
 }
+
+/* .page-height {
+  height: 100vh;
+} */
 
 /*Scrollbar*/
 body::-webkit-scrollbar {
@@ -625,6 +631,7 @@ h5 {
 /* ================================ FOOTER ================================ */
 footer {
   background-color: var(--secondary-green);
+  margin-top: auto;
 }
 
 .footer-grid {
@@ -1136,11 +1143,21 @@ footer {
   background-color: var(--primary-white);
   gap: 10px;
   border-radius: 30px 0 30px 0;
+  cursor: default;
 }
 
 .map-text p {
   color: var(--secondary-black);
   text-align: center;
+}
+
+.map-address {
+  color: var(--secondary-black);
+  cursor: pointer;
+}
+
+.map-address:hover {
+  color: var(--primary-black);
 }
 
 .map-text-border {
@@ -1426,6 +1443,33 @@ footer {
   }
 }
 
+.membership-modal-flex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.membership-modal-text-p {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 18vh;
+  margin: 0;
+  padding-right: 5px;
+}
+
+@media screen and (min-width: 672px) and (max-width: 950px) {
+  .membership-modal-text-p {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 951px) {
+  .membership-modal-text-p {
+    height: 22vh;
+  }
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -1523,7 +1567,28 @@ footer {
     width: 60%;
     max-width: 675px;
     margin: auto;
-    /* padding-top: 8vh; */
+  }
+}
+
+.membership-modal-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 672px) {
+  .membership-modal-flex {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .membership-modal-flex {
+    width: 100%;
+    max-width: 675px;
+    margin: auto;
   }
 }
 
@@ -1563,12 +1628,6 @@ footer {
     height: 35vh;
   }
 }
-
-/* @media screen and (min-width: 672px) and (max-width: 950px) {
-  .modal-text-p {
-    height: 35vh;
-  }
-} */
 
 @media (min-width: 951px) {
   .modal-text-p {
@@ -2167,6 +2226,7 @@ footer {
 .page-card-description {
   text-align: center;
   padding: 15px 5%;
+  cursor: default;
 }
 
 .page-modal-content {
@@ -2182,10 +2242,17 @@ footer {
   transform: translate(-50%, -50%);
 }
 
+@media (min-width: 672px) {
+  .page-modal-content {
+    top: 60%;
+  }
+}
+
 @media screen and (min-width: 950px) {
   .page-modal-content {
     height: 70vh;
     width: 65%;
+    top: 60%;
   }
 }
 
