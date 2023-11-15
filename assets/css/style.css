@@ -419,6 +419,7 @@ h5 {
   position: absolute;
   height: 74px;
   background-color: var(--box-opacity-secondary-green);
+  background: var(--box-opacity-secondary-green);
   z-index: 0;
   width: 100%;
   transition: 0.3s ease-in-out;
@@ -1642,7 +1643,7 @@ footer {
 .modal-text-p {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 40vh;
+  height: 38vh;
   margin: 0;
   padding-right: 5px;
 }
