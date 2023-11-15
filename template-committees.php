@@ -17,7 +17,6 @@
     <div class="page-cards-flex">
 
         <!-- PAGE CARD CONTENT -->
-
         <?php
             $committee_pages = get_pages(array(
                 'child_of' => 23,

@@ -42,10 +42,6 @@ body {
   }
 }
 
-/* .page-height {
-  height: 100vh;
-} */
-
 /*Scrollbar*/
 body::-webkit-scrollbar {
   width: 5px;
@@ -666,7 +662,6 @@ footer {
     grid-template-areas:
       "footer-address some-logos some-logos footer-mail"
       "footer-address some-logos some-logos footer-cvr";
-    /* padding: 40px 0; */
     text-align: right;
     width: 80%;
     height: 30px;
@@ -680,7 +675,6 @@ footer {
     grid-template-areas:
       "footer-address some-logos some-logos footer-mail"
       "footer-address some-logos some-logos footer-cvr";
-    /* padding: 50px 0; */
     text-align: right;
     width: 80%;
     height: 30px;
@@ -1211,7 +1205,6 @@ footer {
 /* ======================================================================== */
 /* ================================ MEMBERSHIP BENEFITS =================================== */
 .membership-benefits-text {
-  /* width: 60%; */
   text-align: center;
   display: flex;
   flex-direction: column;
