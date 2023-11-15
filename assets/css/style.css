@@ -429,6 +429,7 @@ h5 {
   position: absolute;
   width: 100%;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 99999;
 }
 
