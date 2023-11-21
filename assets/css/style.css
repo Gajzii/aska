@@ -1463,7 +1463,7 @@ footer {
 .membership-modal-text-p {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 18vh;
+  height: 20vh;
   margin: 0;
   padding-right: 5px;
 }
@@ -1646,7 +1646,7 @@ footer {
 .modal-text-p {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 38vh;
+  height: 35vh;
   margin: 0;
   padding-right: 5px;
 }

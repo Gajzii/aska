@@ -93,7 +93,9 @@
                     </span>
                     <div class="modal-text">
                         <h4><?= $membership_benefits_heading?></h4>
-                        <div class="membership-modal-text-p"><?= $membership_benefits_description?></div>
+                        <div class="membership-modal-text-p">
+                            <p><?= $membership_benefits_description?></p>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-img-overlay">
