@@ -1649,6 +1649,7 @@ footer {
   height: 35vh;
   margin: 0;
   padding-right: 5px;
+  color: var(--primary-white);
 }
 
 .modal-text-p p {
