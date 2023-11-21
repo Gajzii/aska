@@ -2063,6 +2063,10 @@ footer {
   }
 }
 
+.calendar-fb-text {
+  font-style: italic;
+}
+
 .upcoming-container {
   margin-bottom: 20px;
 }

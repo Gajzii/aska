@@ -180,17 +180,18 @@ if (!$custom_query_upcoming->have_posts() && !$custom_query_past->have_posts()) 
 }
 
 // ---------------------- Event Cards --------------------- //
-function display_event_card() { ?>
+function display_event_card() {
+    $sporti_link_validation = get_field('calendar-sporti-link-validation');
+    $fb_text = get_field('fb_text');
+    $calendar_date = strtotime(get_field('calendar-date'));
+    $day = wp_date('j', $calendar_date);
+    $mon = wp_date('M', $calendar_date);
+    $year = wp_date('Y', $calendar_date);
+    
+    ?>
 <div class="membership-benefits-card event-card">
     <div class="benefits-icon-border event-card-border">
         <div class="benefits-icon-bg">
-
-            <?php $timestamp = strtotime(get_field('calendar-date'));
-                $day = wp_date('j', $timestamp);
-                $mon = wp_date('M', $timestamp);
-                $year = wp_date('Y', $timestamp);
-                ?>
-
             <div class="event-date">
                 <p class="event-dag"><?= $day ?></p>
                 <p class="event-maaned"><?= $mon ?></p>
@@ -202,6 +203,9 @@ function display_event_card() { ?>
     <div class="benefits-card-bg event-card-bg">
         <h4><?= get_the_title() ?></h4>
         <div class="benefits-btn event-btn">
+            <?php if ($sporti_link_validation === 'Nej') { ?>
+            <p class="calendar-fb-text"><?= $fb_text ?></p>
+            <?php } else { ?>
             <div class="secondary-btn-border">
                 <a href="<?= get_field('calendar-sporti-link') ?>" target="_blank">
                     <button class="readMore_multi secondary-btn btn-text-secondary">Læs mere<img class="arrow-icon"
@@ -210,11 +214,15 @@ function display_event_card() { ?>
                     </button>
                 </a>
             </div>
+            <?php } ?>
         </div>
     </div>
 </div>
-
-<?php wp_reset_postdata(); 
+<?php
+    
+    wp_reset_postdata();
 }
+
+
 
 get_footer(); ?>
