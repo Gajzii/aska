@@ -116,6 +116,7 @@ h4,
 h5,
 h6,
 ul,
+ol,
 .btn-text-primary,
 .btn-text-secondary,
 .menutext {
@@ -126,7 +127,8 @@ ul,
 
 a,
 p,
-ul {
+ul,
+ol {
   font-size: 12px;
   line-height: 18px;
 }
@@ -138,7 +140,8 @@ a {
 @media (min-width: 951px) {
   a,
   p,
-  ul {
+  ul,
+  ol {
     font-size: 14px;
   }
 }
@@ -1671,10 +1674,6 @@ footer {
 .modal-text-p ul {
   padding: 5px 0 0 30px;
   list-style: circle;
-}
-
-.modal-text-p ol {
-  font-family: var(--primary-font);
 }
 
 @media (min-width: 951px) {
