@@ -432,8 +432,8 @@ h5 {
 .header-outer {
   position: absolute;
   width: 100%;
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 99999;
 }
 
@@ -496,6 +496,10 @@ h5 {
 .active {
   font-weight: 500 !important;
   color: rgb(169 169 169) !important;
+}
+
+.gradient-border-open-overlay {
+  box-shadow: 0px 2px 4px 2px rgb(0, 0, 0, 35%);
 }
 
 /* ------------------------- DROPDOWN MENU ------------------------------- */
@@ -633,6 +637,20 @@ h5 {
 
 .change #bar3 {
   transform: translateY(-6px) rotate(45deg);
+}
+
+.header-overlay {
+  opacity: 0;
+}
+
+.change-header-overlay {
+  height: 100vh;
+  z-index: -1;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background-color: #0000004a;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 /* ======================================================================== */
@@ -1065,8 +1083,8 @@ footer {
   position: absolute;
   height: 640px;
   width: 100%;
-  backdrop-filter: brightness(0.6) blur(2px);
   -webkit-backdrop-filter: brightness(0.6) blur(2px);
+  backdrop-filter: brightness(0.6) blur(2px);
   z-index: 1;
   overflow: hidden;
 }
@@ -1522,8 +1540,8 @@ footer {
   height: 100%;
   background-color: var(--primary-black);
   background-color: #000000ab;
-  backdrop-filter: grayscale(1) blur(4px);
   -webkit-backdrop-filter: grayscale(1) blur(4px);
+  backdrop-filter: grayscale(1) blur(4px);
 }
 
 .modal-content {
@@ -2260,8 +2278,8 @@ footer {
   justify-content: center;
   overflow: hidden;
   text-align: center;
-  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   border-radius: 0 0 4px 4px;
   cursor: default;
 }
@@ -2277,8 +2295,8 @@ footer {
 .page-card:hover > .page-card-heading {
   width: 100%;
   height: 100%;
-  backdrop-filter: grayscale(1) blur(2px);
   -webkit-backdrop-filter: grayscale(1) blur(2px);
+  backdrop-filter: grayscale(1) blur(2px);
   border-radius: 4px;
 }
 
