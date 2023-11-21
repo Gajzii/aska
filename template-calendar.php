@@ -100,7 +100,7 @@
 
             <?php foreach ($categories as $category) {
                 echo '<label class="calendar-select-checkbox">';
-                echo '<input class="tester" type="checkbox" name="category[]" value="' . $category->slug . '"';
+                echo '<input class="calendar-checkbox" type="checkbox" name="category[]" value="' . $category->slug . '"';
                 if (in_array($category->slug, $selected_categories)) {
                     echo ' checked';
                 }
