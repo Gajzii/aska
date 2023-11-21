@@ -116,6 +116,7 @@ h4,
 h5,
 h6,
 ul,
+ol,
 .btn-text-primary,
 .btn-text-secondary,
 .menutext {
@@ -126,7 +127,8 @@ ul,
 
 a,
 p,
-ul {
+ul,
+ol {
   font-size: 12px;
   line-height: 18px;
 }
@@ -138,7 +140,8 @@ a {
 @media (min-width: 951px) {
   a,
   p,
-  ul {
+  ul,
+  ol {
     font-size: 14px;
   }
 }
