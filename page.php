@@ -51,14 +51,34 @@
         <?php while (have_rows('page_cards')) : the_row();
         $page_cards_heading = get_sub_field('page_cards_heading');
         $page_cards_bg_img = get_sub_field('page_cards_bg_img');
-        $page_cards_description = get_sub_field('page_cards_description');
         $page_cards_text = get_sub_field('page_cards_text');
+        $page_cards_btn_choice = get_sub_field('page_cards_btn_choice');
         $page_cards_link = get_sub_field('page_cards_link');
-
-        // Check if 'page_cards_link' field has data
-        if ($page_cards_link) {
-            // Render the modal content with the link/button
-            ?>
+        $page_cards_file = get_sub_field('page_cards_file');
+        
+        $modal_content = ''; // Initial empty variable for modal content
+        
+        if ($page_cards_btn_choice === 'Ja - link' && $page_cards_link) {
+            $modal_content = '
+                <a class="secondary-btn-border modal-btn-link" href="' . $page_cards_link['url'] . '">
+                    <button class="secondary-btn btn-text-secondary btn-text-link">' . $page_cards_link['title'] . '
+                        <img class="arrow-icon" alt="Pil ikon til højre" src="' . get_stylesheet_directory_uri() . '/assets/media/arrow.svg" />
+                    </button>
+                </a>
+            ';
+        } elseif ($page_cards_btn_choice === 'Ja - fil') {
+            $modal_content = '
+                <a target=_blank class="secondary-btn-border modal-btn-link" href="' . $page_cards_file['url'] . '">
+                    <button class="secondary-btn btn-text-secondary btn-text-link">' . $page_cards_file['title'] . '
+                        <img class="arrow-icon" alt="Pil ikon til højre" src="' . get_stylesheet_directory_uri() . '/assets/media/arrow.svg" />
+                    </button>
+                </a>
+            ';
+        } else {
+            $modal_content = '';
+        }
+        
+        ?>
         <div class="modal modal_multi">
             <div class="modal-flex">
                 <div class="page-modal-content">
@@ -68,18 +88,9 @@
                                 src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
                         </span>
                         <div class="modal-text">
-                            <h4><?= $page_cards_heading?></h4>
-                            <div class="modal-text-p"><?= $page_cards_text?>
-                                <div>
-                                    <a class="secondary-btn-border modal-btn-link"
-                                        href="<?= $page_cards_link['url']; ?>">
-                                        <button class="secondary-btn btn-text-secondary btn-text-link">
-                                            <?= $page_cards_link['title']; ?>
-                                            <img class="arrow-icon" alt="Pil ikon til højre"
-                                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
-                                        </button>
-                                    </a>
-                                </div>
+                            <h4><?= $page_cards_heading ?></h4>
+                            <div class="modal-text-p"><?= $page_cards_text ?>
+                                <div><?= $modal_content ?></div>
                             </div>
                         </div>
                     </div>
@@ -89,33 +100,7 @@
                 </div>
             </div>
         </div>
-        <?php
-        } else {
-            // Render the modal content without the link/button
-            ?>
-        <div class="modal modal_multi">
-            <div class="modal-flex">
-                <div class="page-modal-content">
-                    <div class="modal-padding">
-                        <span class="close_multi">
-                            <img class="close-icon" alt="Luk modal ikon"
-                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/close-icon.svg" />
-                        </span>
-                        <div class="modal-text">
-                            <h4><?= $page_cards_heading?></h4>
-                            <div class="modal-text-p"><?= $page_cards_text?></div>
-                        </div>
-                    </div>
-                    <div class="modal-img-overlay">
-                        <img class="modal-img" src="<?php echo $page_cards_bg_img['url']; ?>" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php
-        }
-    endwhile;
-    ?>
+        <?php endwhile; ?>
         <?php endif; ?>
 
     </div>
