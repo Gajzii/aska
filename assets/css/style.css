@@ -160,6 +160,7 @@ h1 {
   font-size: 26px;
   text-shadow: var(--text-shadow);
   font-weight: 400;
+  cursor: default;
 }
 
 @media (min-width: 951px) {
@@ -725,6 +726,7 @@ footer {
 
 .footer-cvr {
   grid-area: footer-cvr;
+  cursor: default;
 }
 
 .some-logos {
@@ -750,6 +752,7 @@ footer {
   flex-direction: row;
   gap: 20px;
   justify-content: center;
+  cursor: default;
 }
 
 .some-icon {
@@ -835,6 +838,7 @@ footer {
   font-size: 15px;
   line-height: 20px;
   margin-bottom: 10px;
+  cursor: default;
 }
 
 @media (min-width: 672px) {
@@ -917,6 +921,7 @@ footer {
   position: relative;
   padding: 20px 0;
   gap: 20px;
+  cursor: default;
 }
 
 @media (min-width: 672px) {
@@ -1209,6 +1214,7 @@ footer {
   gap: 10px;
   max-width: 400px;
   margin: 0 auto;
+  cursor: default;
 }
 
 .membership-benefits-section {
@@ -1287,6 +1293,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: default;
 }
 
 .benefits-card-bg {
@@ -1299,6 +1306,7 @@ footer {
   align-items: center;
   position: relative;
   box-shadow: 0px 4px 3px 0px rgb(0, 0, 0, 25%);
+  cursor: default;
 }
 
 @media (min-width: 951px) {
@@ -1632,6 +1640,7 @@ footer {
   margin: auto;
   text-align: left;
   margin-top: 30px;
+  cursor: default;
 }
 
 @media (min-width: 672px) {
@@ -1740,7 +1749,7 @@ footer {
   .close-icon:hover {
     filter: var(--svg-primary-darkgreen) drop-shadow(0px 0px 1px rgb(0 0 0 / 0.3));
     transition: all 0.8s ease;
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 
@@ -2254,6 +2263,7 @@ footer {
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border-radius: 0 0 4px 4px;
+  cursor: default;
 }
 
 .page-card-heading h4 {
