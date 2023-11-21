@@ -1673,6 +1673,10 @@ footer {
   list-style: circle;
 }
 
+.modal-text-p ol {
+  font-family: var(--primary-font);
+}
+
 @media (min-width: 951px) {
   .modal-text-p a:hover {
     color: var(--primary-white-hover);
