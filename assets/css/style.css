@@ -1922,6 +1922,10 @@ footer {
   font-size: 15px;
 }
 
+.tester {
+  cursor: pointer;
+}
+
 .calendar-select-checkbox input {
   margin: 2px 6px 0 0;
 }

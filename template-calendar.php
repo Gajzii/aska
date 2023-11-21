@@ -100,7 +100,7 @@
 
             <?php foreach ($categories as $category) {
                 echo '<label class="calendar-select-checkbox">';
-                echo '<input type="checkbox" name="category[]" value="' . $category->slug . '"';
+                echo '<input class="tester" type="checkbox" name="category[]" value="' . $category->slug . '"';
                 if (in_array($category->slug, $selected_categories)) {
                     echo ' checked';
                 }
@@ -108,21 +108,24 @@
                 echo $category->name;
                 echo '</label>';
             } ?>
-            
+
         </div>
         <div class="select-btn-container">
             <input type="submit" value="" class="secondary-btn-border filter-btn">
-            <button class="filter-btn-inner readMore_multi secondary-btn btn-text-secondary">Filtrér valgte<img class="arrow-icon" alt="Pil ikon til højre" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" /></button>
+            <button class="filter-btn-inner readMore_multi secondary-btn btn-text-secondary">Filtrér valgte<img
+                    class="arrow-icon" alt="Pil ikon til højre"
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" /></button>
         </div>
     </form>
-     <a href="<?= esc_url(get_permalink()) ?>" class="calendar-clear">Nulstil filtrering</a>
+    <a href="<?= esc_url(get_permalink()) ?>" class="calendar-clear">Nulstil filtrering</a>
 </div>
 
 <!-- ------------------- Event search UI ------------------ -->
 <div class="calendar-filter-section-secondary">
     <div class="calendar-search-section">
         <form class="calendar-search-form" method="get" action="<?= esc_url(get_permalink()) ?>">
-            <input type="text" class="calendar-search-input" name="event_search" placeholder="Søg efter begivenhed" value="<?php echo isset($_GET['event_search']) ? esc_attr($_GET['event_search']) : ''; ?>">
+            <input type="text" class="calendar-search-input" name="event_search" placeholder="Søg efter begivenhed"
+                value="<?php echo isset($_GET['event_search']) ? esc_attr($_GET['event_search']) : ''; ?>">
             <div class="search-btn-container">
                 <input type="submit" value="" class="search-btn-border"></input>
                 <button class="search-btn">
@@ -145,8 +148,8 @@ if ($custom_query_upcoming->have_posts()) {
     echo '<div class="page-margin event-cards-container upcoming-container">';
     while ($custom_query_upcoming->have_posts()) {
         $custom_query_upcoming->the_post();?>
-        
-       <?php display_event_card();
+
+<?php display_event_card();
     }
     echo '</div>';
 }
@@ -157,18 +160,18 @@ if ($custom_query_past->have_posts()) {
     echo '<div class="page-margin event-cards-container">';
     while ($custom_query_past->have_posts()) {
         $custom_query_past->the_post();?>
-        <div class="past-event-card">
-        <?php display_event_card();?>
-        </div>
-        <?php
+<div class="past-event-card">
+    <?php display_event_card();?>
+</div>
+<?php
     }
     echo '</div>';?>
-    <div class="secondary-btn-border" id="showAllPastEventsButton" onclick="showAllPastEvents()">
-        <button class="readMore_multi secondary-btn btn-text-secondary">Vis alle<img class="arrow-icon" alt="Pil ikon til højre"
-            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
-        </button>
-    </div>
-    <?php
+<div class="secondary-btn-border" id="showAllPastEventsButton" onclick="showAllPastEvents()">
+    <button class="readMore_multi secondary-btn btn-text-secondary">Vis alle<img class="arrow-icon"
+            alt="Pil ikon til højre" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
+    </button>
+</div>
+<?php
     echo '</div>';
 }
 
@@ -179,36 +182,37 @@ if (!$custom_query_upcoming->have_posts() && !$custom_query_past->have_posts()) 
 // ---------------------- Event Cards --------------------- //
 function display_event_card() { ?>
 <div class="membership-benefits-card event-card">
-        <div class="benefits-icon-border event-card-border">
-            <div class="benefits-icon-bg">
+    <div class="benefits-icon-border event-card-border">
+        <div class="benefits-icon-bg">
 
-                <?php $timestamp = strtotime(get_field('calendar-date'));
+            <?php $timestamp = strtotime(get_field('calendar-date'));
                 $day = wp_date('j', $timestamp);
                 $mon = wp_date('M', $timestamp);
                 $year = wp_date('Y', $timestamp);
                 ?>
 
-                <div class="event-date">
-                    <p class="event-dag"><?= $day ?></p>
-                    <p class="event-maaned"><?= $mon ?></p>
-                    <p class="event-aar"><?= $year ?></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="benefits-card-bg event-card-bg">
-            <h4><?= get_the_title() ?></h4>
-            <div class="benefits-btn event-btn">
-                <div class="secondary-btn-border">
-                    <a href="<?= get_field('calendar-sporti-link') ?>" target="_blank">
-                        <button class="readMore_multi secondary-btn btn-text-secondary">Læs mere<img class="arrow-icon" alt="Pil ikon til højre"
-                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
-                        </button>
-                    </a>
-                </div>
+            <div class="event-date">
+                <p class="event-dag"><?= $day ?></p>
+                <p class="event-maaned"><?= $mon ?></p>
+                <p class="event-aar"><?= $year ?></p>
             </div>
         </div>
     </div>
+
+    <div class="benefits-card-bg event-card-bg">
+        <h4><?= get_the_title() ?></h4>
+        <div class="benefits-btn event-btn">
+            <div class="secondary-btn-border">
+                <a href="<?= get_field('calendar-sporti-link') ?>" target="_blank">
+                    <button class="readMore_multi secondary-btn btn-text-secondary">Læs mere<img class="arrow-icon"
+                            alt="Pil ikon til højre"
+                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/arrow.svg" />
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php wp_reset_postdata(); 
 }
