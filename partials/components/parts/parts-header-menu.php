@@ -22,6 +22,7 @@
             ?>
             </nav>
         </div>
-        <div class="gradient-border"></div>
+        <div class="gradient-border gradient-border-open"></div>
+        <div class="header-overlay"></div>
     </div>
 </header>

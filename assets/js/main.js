@@ -7,6 +7,8 @@ function onClickMenu() {
   document.querySelector(".header-background").classList.toggle("change-header-height");
   document.querySelector(".header-inner").classList.toggle("change-header-height");
   document.querySelector(".logo").classList.toggle("change-logo");
+  document.querySelector(".header-overlay").classList.toggle("change-header-overlay");
+  document.querySelector(".gradient-border-open").classList.toggle("gradient-border-open-overlay");
 
   // If dropdown-menu has class 'change', prevent scrolling
   if (dropdownMenu.classList.contains("change")) {
