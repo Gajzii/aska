@@ -1688,13 +1688,13 @@ footer {
 
 @media screen and (min-width: 672px) and (max-width: 950px) {
   .modal-text-p {
-    height: 35vh;
+    height: 28vh;
   }
 }
 
 @media (min-width: 951px) {
   .modal-text-p {
-    height: 30vh;
+    height: 21vh;
   }
 }
 
