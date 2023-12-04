@@ -23,7 +23,12 @@
     </div>
     <div class="footer-credits" id="footer-contact">
         <div class="footer-credits-inner">
-            <p>©2023 ASKA ISLANDSHESTEKLUB</p>
+            <?php
+            $currentDate = new DateTime();
+            $year = $currentDate->format("Y");
+        ?>
+
+            <p>©<?php echo $year; ?> ASKA ISLANDSHESTEKLUB</p>
             <p>M.WENNERWALD OG C.NØRGAARD</p>
         </div>
         <div>
