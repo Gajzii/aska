@@ -2650,3 +2650,44 @@ footer {
   margin: 10px 0 40px 0;
   font-weight: 400;
 }
+/* ======================================================================== */
+/* ================================ 404-page ============================== */
+.page-not-found {
+  margin-top: 160px;
+}
+
+.page-not-found-text {
+  color: var(--secondary-black);
+  text-shadow: none;
+  text-align: center;
+}
+
+.page-not-found-text-p {
+  margin-top: 25px;
+  color: var(--secondary-black);
+  text-align: center;
+}
+
+.page-not-found h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.page-not-found-list {
+  margin: auto;
+  text-align: center;
+}
+
+.page-not-found ul {
+  display: inline-block;
+  text-align: left;
+  margin-top: 10px;
+  line-height: 30px;
+}
+
+.page-not-found-logo {
+  width: 100%;
+  max-width: 100px;
+  margin: 20px auto 5px auto;
+  display: block;
+}
