@@ -15,12 +15,12 @@
 </div>
 
 <!-- -------------------- Filter functions -------------- -->
-<!-- ------------------- Category checkboxes ------------ -->
+<!-- ------------------- Calendar_taxonomy checkboxes ------------ -->
 <?php
     $selected_categories = array();
 
-    if (isset($_GET['category'])) {
-        $selected_categories = (array)$_GET['category'];
+    if (isset($_GET['calendar_taxonomy'])) {
+        $selected_categories = (array)$_GET['calendar_taxonomy'];
     }
 
     $current_date = date('Y-m-d');
@@ -59,7 +59,7 @@
     if (!empty($selected_categories)) {
         $args_upcoming['tax_query'] = array(
             array(
-                'taxonomy' => 'category',
+                'taxonomy' => 'calendar_taxonomy',
                 'field'    => 'slug',
                 'terms'    => $selected_categories,
             ),
@@ -67,7 +67,7 @@
 
         $args_past['tax_query'] = array(
             array(
-                'taxonomy' => 'category',
+                'taxonomy' => 'calendar_taxonomy',
                 'field'    => 'slug',
                 'terms'    => $selected_categories,
             ),
@@ -85,27 +85,27 @@
     $custom_query_past = new WP_Query($args_past);
 
     $categories = get_terms(array(
-        'taxonomy' => 'category',
+        'taxonomy' => 'calendar_taxonomy',
         'hide_empty' => false,
     ));
-    $categories = array_filter($categories, function ($category) {
-        $hidden_category_ids = array(10);
-        return !in_array($category->term_id, $hidden_category_ids);
+    $categories = array_filter($categories, function ($calendar_taxonomy) {
+        $hidden_calendar_taxonomy_ids = array(10);
+        return !in_array($calendar_taxonomy->term_id, $hidden_calendar_taxonomy_ids);
     });
 ?>
-<!-- ------------------- Category checkboxes UI ------------- -->
+<!-- ------------------- Calendar_taxonomy checkboxes UI ------------- -->
 <div class="calendar-filter-section">
     <form class="calendar-select-form" method="get" action="<?= esc_url(get_permalink()) ?>">
         <div class="calendar-select-section">
 
-            <?php foreach ($categories as $category) {
+            <?php foreach ($categories as $calendar_taxonomy) {
                 echo '<label class="calendar-select-checkbox">';
-                echo '<input class="calendar-checkbox" type="checkbox" name="category[]" value="' . $category->slug . '"';
-                if (in_array($category->slug, $selected_categories)) {
+                echo '<input class="calendar-checkbox" type="checkbox" name="calendar_taxonomy[]" value="' . $calendar_taxonomy->slug . '"';
+                if (in_array($calendar_taxonomy->slug, $selected_categories)) {
                     echo ' checked';
                 }
                 echo '>';
-                echo $category->name;
+                echo $calendar_taxonomy->name;
                 echo '</label>';
             } ?>
 
