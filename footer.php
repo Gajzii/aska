@@ -24,8 +24,8 @@
     <div class="footer-credits" id="footer-contact">
         <div class="footer-credits-inner">
             <?php
-            $currentDate = new DateTime();
-            $year = $currentDate->format("Y");
+            $currentDate = new DateTime(); // Henter dato fra server og gemmer i variabel $currentDate 
+            $year = $currentDate->format("Y"); // Henter årstal fra variabel $currentDate og gemmer i variabel $year 
         ?>
 
             <p>©<?php echo $year; ?> ASKA ISLANDSHESTEKLUB</p>

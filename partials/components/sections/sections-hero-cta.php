@@ -5,6 +5,7 @@
         <p class="cta-text">ASKA er for dig, der elsker islandske heste og ønsker at dele din passion med andre.</p>
         <a
             href="https://aska-islandshesteklub.dk/bliv-en-del-af-aska/"><?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?></a>
+        <!-- Knap fra parts, med tilføjet link -->
     </div>
 
     <div class="cta-card-border"></div>
@@ -15,6 +16,7 @@
         <p class="cta-text">Få et overblik over alle de spændende aktiviteter, som ASKA har planlagt i fremtiden.</p>
         <a
             href="https://aska-islandshesteklub.dk/kalender/"><?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?></a>
+        <!-- Knap fra parts, med tilføjet link -->
     </div>
 
     <div class="cta-card-border"></div>
@@ -25,5 +27,6 @@
         <p class="cta-text">ASKA er noget vi laver sammen og er sammen. Derfor har ASKA-fællesskabet brug for dig.</p>
         <a
             href="https://aska-islandshesteklub.dk/bliv-en-del-af-aska/"><?php get_template_part( 'partials/components/parts/parts','secondary-btn' ); ?></a>
+        <!-- Knap fra parts, med tilføjet link -->
     </div>
 </div>

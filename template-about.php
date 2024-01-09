@@ -90,6 +90,7 @@
         
         $modal_content = ''; // Initial empty variable for modal content
         
+        // If statement for modal content 
         if ($page_cards_btn_choice === 'Ja - link' && $page_cards_link) {
             $modal_content = '
                 <a class="secondary-btn-border modal-btn-link" href="' . $page_cards_link['url'] . '">
@@ -105,10 +106,10 @@
                         <img class="arrow-icon" alt="Pil ikon til højre" src="' . get_stylesheet_directory_uri() . '/assets/media/arrow.svg" />
                     </button>
                 </a>
-            ';
+            '; // Modal content for file button 
         } else {
             $modal_content = '';
-        }
+        } // Modal content for link button 
         
         ?>
     <div class="modal modal_multi">

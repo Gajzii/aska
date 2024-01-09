@@ -22,6 +22,7 @@
     </div>
 </div>
 
+<!-- Kort baggrund -->
 <div class="map-background">
     <div class="map-dk"></div>
     <div class="map-overlay"></div>

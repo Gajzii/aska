@@ -18,24 +18,28 @@
 
         <!-- PAGE CARD CONTENT -->
         <?php
-            $committee_pages = get_pages(array(
-                'child_of' => 23,
-                'sort_column' => 'post_title',
+            $committee_pages = get_pages(array( // Get the pages from the parent page with the ID of 23 (Committees)
+                'child_of' => 23, // 23 is the ID of the parent page
+                'sort_column' => 'post_title', // Sort the pages by title
             ));
         ?>
+        <!-- This is the code that gets the pages from the parent page with the ID of 23 (Committees) -->
 
         <?php if (!empty($committee_pages)) : ?>
+        <!-- If the pages are not empty, then do the following: -->
         <?php foreach ($committee_pages as $page) : ?>
-        <?php 
-            $page_title = get_the_title($page);
-            $page_url = get_permalink($page);
-            $page_img = get_field('page_hero_img', $page);
+        <!-- For each page, do the following: -->
+        <?php  
+            $page_title = get_the_title($page); // Get the title of the page
+            $page_url = get_permalink($page); // Get the URL of the page
+            $page_img = get_field('page_hero_img', $page); // Get the hero image of the page
         ?>
 
         <div class="page-card" ontouchmove="" style="background-image: url('<?= $page_img['url']; ?>');">
             <div class="page-card-heading" ontouchmove="">
                 <h4>
                     <?= $page_title; ?>
+                    <!-- Print the title of the page -->
                 </h4>
                 <div class="page-card-details">
                     <br>
@@ -51,7 +55,9 @@
         </div>
 
         <?php endforeach; ?>
+        <!-- End of for each page, do the following -->
         <?php endif; ?>
+        <!-- End of if the pages are not empty -->
 
     </div>
 </div>

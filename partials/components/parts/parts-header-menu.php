@@ -8,15 +8,16 @@
             </a>
             <nav class="menu-container">
                 <div id="dropdownmenu" onclick="onClickMenu()">
+                    <!-- This is the hamburger menu button -->
                     <div id="bar1" class="bar"></div>
                     <div id="bar2" class="bar"></div>
                     <div id="bar3" class="bar"></div>
                 </div>
 
-                <?php wp_nav_menu(
-                array(
-                    'theme_location' => 'top-menu',
-                    'container_class' => 'top-menu',
+                <?php wp_nav_menu( // Display the menu
+                array( 
+                    'theme_location' => 'top-menu', // Menu location in the admin panel 
+                    'container_class' => 'top-menu', // Class name 
                 )
                 );
             ?>
